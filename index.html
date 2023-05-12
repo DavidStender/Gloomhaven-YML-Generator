@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <title>Gloomhaven Digital Mod Helper</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="javascript/index.js"></script>
+</head>
+<body>
+    <h1>Gloomhaven Digital Mod Helper</h1>
+    <div>
+        <label>Parser</label>
+        <select id="yml-parser-selecter">
+            <option value="hero-summon">Hero Summon</option>
+            <option value="character">character</option>
+            <option value="ability-card">Ability Card</option>
+            <option value="attack-modifier">Attack Modifier</option>
+            <option value="perk">Perk</option>
+            <option value="treasure-table">Treasure Table</option>
+        </select>
+    </div>
+    <div id="YML-Character-Generator-Form">
+        <div>
+            <label id="character-id-label" for="character-id-input">ID:</label>
+            <input id="character-id-input" name="character-id-input" type="text" />
+        </div>
+        <div>
+            <label>Lockey:</label>
+            <input type="text" />
+        </div>
+        <div>
+            <label>Model:</label>
+            <select>
+                <option>Brute</option>
+                <option>Scoundrel</option>
+                <option>Spellweaver</option>
+                <option>Tinker</option>
+                <option>Mindthief</option>
+                <option>Cragheart</option>
+            </select>
+        </div>
+        <div>
+            <label>Default Skin:</label>
+            <input type="number" min="0" max="2"/>
+        </div>
+        <div>
+            <label>Health Table:</label>
+            <input class="character-health-table-input" type="number" min="0" placeholder="10"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="12"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="14"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="16"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="18"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="20"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="22"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="24"/>
+            <input class="character-health-table-input" type="number" min="0" placeholder="26"/>
+        </div>
+        <div>
+            <label>Number of Ability Cards In Battle:</label>
+            <input type="number" min="0"/>
+        </div>
+        <div>
+            <label>Attack Modifier Deck:</label>
+            <input type="text" />
+        </div>
+        <div>
+            <label>Companion Summon Data:</label>
+            <input type="text"/>
+        </div>
+        <div>
+            <label>Description:</label>
+            <input type="text"/>
+        </div>
+        <div>
+            <label>Role:</label>
+            <input type="text"/>
+        </div>
+        <div>
+            <label>Difficulty:</label>
+            <select>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <div>
+            <label>Strengths:</label>
+            <input type="text" />
+        </div>
+        <div>
+            <label>Weaknesses:</label>
+            <input type="text"/>
+        </div>
+        <div>
+            <label>Adventure Description:</label>
+            <textarea id="adventure-description" name="adventure-description"></textarea>
+        </div>
+    </div>
+    <div>
+        <button id="form-reset-button">Reset</button>
+        <button id="generate-yml-button">Generate YML</button>
+    </div>
+    <p class="todo">Todo generate Language Update for YML file</p>
+</body>

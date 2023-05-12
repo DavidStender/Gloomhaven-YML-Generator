@@ -1,0 +1,19 @@
+/* YML Character Generator Form*/
+
+#adventure-description
+{
+    display: block;
+}
+
+/* Classes */
+
+.character-health-table-input
+{
+    width: 35px;
+}
+
+.todo
+{
+    background-color: blue;
+    color:gainsboro;;
+}
