@@ -1,3 +1,97 @@
+/* Main styles*/
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: #3e3e3e;
+}
+
+h1
+{
+    text-align: center;
+    min-width: 520px;
+    max-width: 700px;
+    color: #ffdd00;
+    margin: 10px auto;
+    border-bottom: 3px solid #ffdd00;
+}
+
+div#parser-selection-div
+{
+    text-align: center;
+    margin: 15px;
+}
+
+div#parser-selection-div label
+{
+    font-size: 1.4em;
+    text-decoration: underline;
+    margin-right: 5px;
+}
+
+div.yml-form
+{
+    min-width: 500px;
+    max-width: 650px;
+    margin: auto;
+    border: 3px solid #ffdd00;
+    border-radius: 2px;
+    padding: 5px 15px;
+}
+
+div.yml-form div
+{
+    margin: 10px 0px;
+}
+
+label
+{
+    color: #ffdd00;
+    font-size: 1.1em;
+    margin-right: 5px;
+}
+
+input, textarea, select
+{
+    background-color: #E0C9A6;
+    font-size: 1.05em;
+}
+
+div#form-button-div
+{
+    text-align: center;
+    margin: 10px 0px;
+}
+
+button
+{
+    background-color: #3e3e3e;
+    color: #ffdd00;
+    font-size: 1.3em;
+    text-decoration: underline;
+    margin: 0px 10px;
+    border: 3px solid #ffdd00;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:hover
+{
+    background-color: #ffdd00;
+    color: #3e3e3e;
+    border: 3px solid #3e3e3e;
+}
+
+button:active
+{
+    font-size: 1.25em;
+}
+
 /* YML Character Generator Form*/
 
 #adventure-description

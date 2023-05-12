@@ -5,9 +5,9 @@
     <script src="javascript/index.js"></script>
 </head>
 <body>
-    <h1>Gloomhaven Digital Mod Helper</h1>
-    <div>
-        <label>Parser</label>
+    <h1 id="page-header">Gloomhaven YML Generator</h1>
+    <div id="parser-selection-div">
+        <label>Parser:</label>
         <select id="yml-parser-selecter">
             <option value="hero-summon">Hero Summon</option>
             <option value="character">character</option>
@@ -17,7 +17,7 @@
             <option value="treasure-table">Treasure Table</option>
         </select>
     </div>
-    <div id="YML-Character-Generator-Form">
+    <div class="yml-form" id="YML-Character-Generator-Form">
         <div>
             <label id="character-id-label" for="character-id-input">ID:</label>
             <input id="character-id-input" name="character-id-input" type="text" />
@@ -94,7 +94,7 @@
             <textarea id="adventure-description" name="adventure-description"></textarea>
         </div>
     </div>
-    <div>
+    <div id="form-button-div">
         <button id="form-reset-button">Reset</button>
         <button id="generate-yml-button">Generate YML</button>
     </div>
