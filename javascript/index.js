@@ -22,6 +22,7 @@ window.addEventListener('load', function ()
         let selectedYmlParser = getSelectedYmlParserType();
         console.log(`TODO: Generate YML File`);
         console.log(`The selected parser is ${selectedYmlParser}`);
+        console.log(getCharacterYmlString());
     }
 
     /**
@@ -40,5 +41,21 @@ window.addEventListener('load', function ()
     {
         let selectedYmlParser = document.getElementById("yml-parser-selecter");
         return ""+selectedYmlParser.value;
+    }
+
+    /**
+     * 
+     */
+    function getCharacterYmlString()
+    {
+        let characterYmlString = "";
+        // Get all the input fields from the character form
+        let characterID = document.getElementById("character-id-input").value;
+        let characterLockey = document.getElementById("character-lockey-input").value;
+
+        characterYmlString = "Parser: Character\n";
+        characterYmlString += `ID: ${characterID}\n`;
+        characterYmlString += `Lockey: ${characterLockey}`;
+        return characterYmlString;
     }
 });

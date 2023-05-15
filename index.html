@@ -10,7 +10,7 @@
         <label>Parser:</label>
         <select id="yml-parser-selecter">
             <option value="hero-summon">Hero Summon</option>
-            <option value="character">character</option>
+            <option value="character">Character</option>
             <option value="ability-card">Ability Card</option>
             <option value="attack-modifier">Attack Modifier</option>
             <option value="perk">Perk</option>
@@ -23,75 +23,75 @@
             <input id="character-id-input" name="character-id-input" type="text" />
         </div>
         <div>
-            <label>Lockey:</label>
-            <input type="text" />
+            <label id="character-lockey-label" for="character-lockey-input">Lockey:</label>
+            <input id="character-lockey-input" name="character-lockey-input" type="text" />
         </div>
         <div>
-            <label>Model:</label>
-            <select>
-                <option>Brute</option>
-                <option>Scoundrel</option>
-                <option>Spellweaver</option>
-                <option>Tinker</option>
-                <option>Mindthief</option>
-                <option>Cragheart</option>
+            <label id="character-model-label" for="character-model-input">Model:</label>
+            <select id="character-model-input" name="character-model-input">
+                <option value="brute">Brute</option>
+                <option value="scoundrel">Scoundrel</option>
+                <option value="spellweaver">Spellweaver</option>
+                <option value="tinker">Tinker</option>
+                <option value="mindtheif">Mindthief</option>
+                <option value="cragheart">Cragheart</option>
             </select>
         </div>
         <div>
-            <label>Default Skin:</label>
-            <input type="number" min="0" max="2"/>
+            <label id="character-default-skin-label" for="character-default-skin-input">Default Skin:</label>
+            <input id="character-default-skin-input" name="character-default-skin-input" type="number" min="0" max="2"/>
         </div>
         <div>
-            <label>Health Table:</label>
-            <input class="character-health-table-input" type="number" min="0" placeholder="10"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="12"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="14"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="16"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="18"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="20"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="22"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="24"/>
-            <input class="character-health-table-input" type="number" min="0" placeholder="26"/>
+            <label id="character-health-table-label" for="character-health-table-input-level-one">Health Table:</label>
+            <input class="character-health-table-input" id="character-health-table-input-level-one" type="number" min="0" placeholder="10"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-two" type="number" min="0" placeholder="12"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-three" type="number" min="0" placeholder="14"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-four" type="number" min="0" placeholder="16"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-five" type="number" min="0" placeholder="18"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-six" type="number" min="0" placeholder="20"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-seven" type="number" min="0" placeholder="22"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-eight" type="number" min="0" placeholder="24"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-nine" type="number" min="0" placeholder="26"/>
         </div>
         <div>
-            <label>Number of Ability Cards In Battle:</label>
-            <input type="number" min="0"/>
+            <label id="character-number-ability-cards-label" for="character-number-ability-cards-input">Number of Ability Cards In Battle:</label>
+            <input id="character-number-ability-cards-input" name="character-number-ability-cards-input" type="number" min="0"/>
         </div>
         <div>
-            <label>Attack Modifier Deck:</label>
-            <input type="text" />
+            <label id="character-attack-mod-deck-label" for="character-attack-mod-deck-input">Attack Modifier Deck:</label>
+            <input id="character-attack-mod-deck-input" name="character-attack-mod-deck-input" type="text" />
         </div>
         <div>
-            <label>Companion Summon Data:</label>
-            <input type="text"/>
+            <label id="character-companion-summon-label" for="character-companion-summon-input">Companion Summon Data:</label>
+            <input id="character-companion-summon-input" name="character-companion-summon-input" type="text"/>
         </div>
         <div>
-            <label>Description:</label>
-            <input type="text"/>
+            <label id="character-description-label" for="character-description-input">Description:</label>
+            <input id="character-description-input" name="character-description-input" type="text"/>
         </div>
         <div>
-            <label>Role:</label>
-            <input type="text"/>
+            <label id="character-role-label" for="character-role-input">Role:</label>
+            <input id="character-role-input" name="character-role-input" type="text"/>
         </div>
         <div>
-            <label>Difficulty:</label>
-            <select>
+            <label id="character-difficulty-label" for="character-difficulty-label">Difficulty:</label>
+            <select id="character-difficulty=input" name="character-difficulty-input">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
         </div>
         <div>
-            <label>Strengths:</label>
-            <input type="text" />
+            <label id="character-strengths-label" for="character-strengths-input">Strengths:</label>
+            <input id="character-strengths-input" name="character-strengths-input" type="text" />
         </div>
         <div>
-            <label>Weaknesses:</label>
-            <input type="text"/>
+            <label id="character-weakness-label" for="character-weakness-input">Weaknesses:</label>
+            <input id="character-weakness-input" name="character-weakness-input" type="text"/>
         </div>
         <div>
-            <label>Adventure Description:</label>
-            <textarea id="adventure-description" name="adventure-description"></textarea>
+            <label id="character-adventure-description-label" for="character-adventure-description-input">Adventure Description:</label>
+            <textarea id="character-adventure-description-input" name="character-adventure-description-input"></textarea>
         </div>
     </div>
     <div id="form-button-div">
@@ -99,4 +99,10 @@
         <button id="generate-yml-button">Generate YML</button>
     </div>
     <p class="todo">Todo generate Language Update for YML file</p>
+    <div id="footer">
+        <p>
+            Author: David Stender<br />
+            Version: 0.1
+        </p>
+    </div>
 </body>
