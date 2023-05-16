@@ -8,13 +8,37 @@
     <h1 id="page-header">Gloomhaven YML Generator</h1>
     <div id="parser-selection-div">
         <label>Parser:</label>
-        <select id="yml-parser-selecter">
-            <option value="hero-summon">Hero Summon</option>
-            <option value="character">Character</option>
-            <option value="ability-card">Ability Card</option>
-            <option value="attack-modifier">Attack Modifier</option>
-            <option value="perk">Perk</option>
-            <option value="treasure-table">Treasure Table</option>
+        <select id="yml-parser-selector">
+            <option value="HeroSummon">Hero Summon</option>
+            <option value="Character">Character</option>
+            <option value="AttackModifier">Attack Modifier</option>
+            <option value="AttackModifierDeck">Attack Modifier Deck</option>
+            <option value="AbilityCard">Ability Card</option>
+            <option value="ItemCard">Item Card</option>
+            <option value="Perk">Perk</option>
+            <option value="Enhancements">Enhancements</option>
+            <option value="EnemyCard">Enemy Card</option>
+            <option value="Enemy">Enemy</option>
+            <option value="MonsterData">Monster Data</option>
+            <option value="TreasureTable">Treasure Table</option>
+            <option value="Rooms">Rooms</option>
+            <option value="ScenarioAbility">Scenario Ability</option>
+            <option value="Scenario">Scenario</option>
+            <option value="Difficulty">Difficulty</option>
+            <option value="Achievement">Achievement</option>
+            <option value="RoadEvent">Road Event</option>
+            <option value="VisibilitySphere">Visibility Sphere</option>
+            <option value="Temple">Temple</option>
+            <option value="Village">Village</option>
+            <option value="Quest">Quest</option>
+            <option value="Message">Message</option>
+            <option value="Headquarters">Headquarters</option>
+            <option value="CityEvent">City Event</option>
+            <option value="InitialEvents">Initial Events</option>
+            <option value="BattleGoal">Battle Goal</option>
+            <option value="PersonalQuest">Personal Quest</option>
+            <option value="StoreLocation">Store Location</option>
+            <option value="RemoveYML">Remove YML</option>
         </select>
     </div>
     <div class="yml-form" id="YML-Character-Generator-Form">
@@ -42,16 +66,16 @@
             <input id="character-default-skin-input" name="character-default-skin-input" type="number" min="0" max="2"/>
         </div>
         <div>
-            <label id="character-health-table-label" for="character-health-table-input-level-one">Health Table:</label>
-            <input class="character-health-table-input" id="character-health-table-input-level-one" type="number" min="0" placeholder="10"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-two" type="number" min="0" placeholder="12"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-three" type="number" min="0" placeholder="14"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-four" type="number" min="0" placeholder="16"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-five" type="number" min="0" placeholder="18"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-six" type="number" min="0" placeholder="20"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-seven" type="number" min="0" placeholder="22"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-eight" type="number" min="0" placeholder="24"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-nine" type="number" min="0" placeholder="26"/>
+            <label id="character-health-table-label" for="character-health-table-input-level-1">Health Table:</label>
+            <input class="character-health-table-input" id="character-health-table-input-level-1" type="number" min="0" placeholder="10"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-2" type="number" min="0" placeholder="12"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-3" type="number" min="0" placeholder="14"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-4" type="number" min="0" placeholder="16"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-5" type="number" min="0" placeholder="18"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-6" type="number" min="0" placeholder="20"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-7" type="number" min="0" placeholder="22"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-8" type="number" min="0" placeholder="24"/>
+            <input class="character-health-table-input" id="character-health-table-input-level-9" type="number" min="0" placeholder="26"/>
         </div>
         <div>
             <label id="character-number-ability-cards-label" for="character-number-ability-cards-input">Number of Ability Cards In Battle:</label>
@@ -59,7 +83,7 @@
         </div>
         <div>
             <label id="character-attack-mod-deck-label" for="character-attack-mod-deck-input">Attack Modifier Deck:</label>
-            <input id="character-attack-mod-deck-input" name="character-attack-mod-deck-input" type="text" />
+            <input id="character-attack-mod-deck-input" name="character-attack-mod-deck-input" type="text" value="Standard"/>
         </div>
         <div>
             <label id="character-companion-summon-label" for="character-companion-summon-input">Companion Summon Data:</label>
@@ -86,8 +110,8 @@
             <input id="character-strengths-input" name="character-strengths-input" type="text" />
         </div>
         <div>
-            <label id="character-weakness-label" for="character-weakness-input">Weaknesses:</label>
-            <input id="character-weakness-input" name="character-weakness-input" type="text"/>
+            <label id="character-weaknesses-label" for="character-weaknesses-input">Weaknesses:</label>
+            <input id="character-weaknesses-input" name="character-weaknesses-input" type="text"/>
         </div>
         <div>
             <label id="character-adventure-description-label" for="character-adventure-description-input">Adventure Description:</label>
@@ -98,6 +122,7 @@
         <button id="form-reset-button">Reset</button>
         <button id="generate-yml-button">Generate YML</button>
     </div>
+    <p class="todo">Todo generate preview of YML Output. example: show the card template when creating an ability card</p>
     <p class="todo">Todo generate Language Update for YML file</p>
     <div id="footer">
         <p>
