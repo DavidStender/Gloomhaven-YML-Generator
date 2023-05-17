@@ -9,10 +9,10 @@
     <div id="parser-selection-div">
         <label>Parser:</label>
         <select id="yml-parser-selector">
-            <option value="HeroSummon">Hero Summon</option>
-            <option value="Character">Character</option>
-            <option value="AttackModifier">Attack Modifier</option>
-            <option value="AttackModifierDeck">Attack Modifier Deck</option>
+            <option value="hero-summon">Hero Summon</option>
+            <option value="character">Character</option>
+            <option value="attack-modifier">Attack Modifier</option>
+            <option value="attack-modifier-deck">Attack Modifier Deck</option>
             <option value="AbilityCard">Ability Card</option>
             <option value="ItemCard">Item Card</option>
             <option value="Perk">Perk</option>
@@ -41,7 +41,16 @@
             <option value="RemoveYML">Remove YML</option>
         </select>
     </div>
-    <div class="yml-form" id="YML-Character-Generator-Form">
+
+    <!--HERO SUMMON GENERATOR FORM-->
+    <div class="yml-form" id="yml-hero-summon-generator-form">
+        <div>
+            <label>TODO: Hero Summon Form</label>
+        </div>
+    </div>
+
+    <!--CHARACTER GENERATOR FORM-->
+    <div class="yml-form" id="yml-character-generator-form">
         <div>
             <label id="character-id-label" for="character-id-input">ID:</label>
             <input id="character-id-input" name="character-id-input" type="text" />
@@ -118,6 +127,35 @@
             <textarea id="character-adventure-description-input" name="character-adventure-description-input"></textarea>
         </div>
     </div>
+
+    <!--ATTACK MODIFIER GENERATOR-->
+    <div class="yml-form" id="yml-attack-modifier-generator-form">
+        <div>
+            <label>TODO: Attack Modifier Form</label>
+        </div>
+    </div>
+
+    <!--ATTACK MODIFIER DECK GENERATOR-->
+    <div class="yml-form" id="yml-attack-modifier-deck-generator-form">
+        <div>
+            <label>TODO: Attack Modifier Deck Form</label>
+        </div>
+    </div>
+
+    <!--ABILITY CARD GENERATOR-->
+    <div class="yml-form" id="yml-ability-card-generator-form">
+        <div>
+            <label>TODO: Ability Card Form</label>
+        </div>
+    </div>
+
+    <!--ITEM CARD GENERATOR-->
+    <div class="yml-form" id="yml-item-card-generator-form">
+        <div>
+            <label>TODO: Item Card Form</label>
+        </div>
+    </div>
+
     <div id="form-button-div">
         <button id="form-reset-button">Reset</button>
         <button id="generate-yml-button">Generate YML</button>

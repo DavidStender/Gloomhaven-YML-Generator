@@ -15,7 +15,32 @@ window.addEventListener('load', function ()
 
     ymlParserSelector.addEventListener('change', function (){
         console.log(ymlParserSelector.value);
+        showSelectedParserForm(ymlParserSelector.value);
     });
+
+    /**
+     * 
+     * @param {String} parser - The currently selected YML parser
+     */
+    function showSelectedParserForm(parser)
+    {
+        let ymlForms = document.getElementsByClassName("yml-form");
+        for(let i=0; i<ymlForms.length; i++)
+        {
+            let ymlForm = ymlForms[i];
+            console.log(ymlForm.id);
+            console.log(`yml-${parser}-generator-form`);
+            if(ymlForm.id == `yml-${parser}-generator-form`)
+            {
+                console.log("class found");
+                ymlForm.classList.remove("hidden");
+            }
+            else
+            {
+                ymlForm.classList.add("hidden");
+            }
+        }
+    }
 
 
     /**

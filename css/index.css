@@ -108,6 +108,11 @@ button:active
     width: 35px;
 }
 
+.hidden
+{
+    display: none;
+}
+
 .todo
 {
     background-color: blue;
