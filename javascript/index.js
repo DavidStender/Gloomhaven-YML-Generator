@@ -4,6 +4,8 @@ window.addEventListener('load', function ()
     let generateYmlButton = document.getElementById("generate-yml-button");
     let ymlParserSelector = document.getElementById("yml-parser-selector");
 
+    showSelectedParserForm(ymlParserSelector.value);
+
     formResetButton.addEventListener("click", function(){
         resetForm();
     });
