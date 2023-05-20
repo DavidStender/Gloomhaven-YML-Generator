@@ -9,6 +9,7 @@
 body
 {
     background-color: #3e3e3e;
+    min-width: 450px;
 }
 
 h1
@@ -19,6 +20,19 @@ h1
     color: #ffdd00;
     margin: 10px auto;
     border-bottom: 3px solid #ffdd00;
+}
+
+h2
+{
+    text-align: center;
+    color: #ffdd00;
+    border-bottom: 3px solid #ffdd00;
+    margin: auto -16px;
+}
+
+h2.yml-parser-preview
+{
+    margin-top: 25px;
 }
 
 div#parser-selection-div
@@ -34,9 +48,14 @@ div#parser-selection-div label
     margin-right: 5px;
 }
 
+select#yml-parser-selector
+{
+    max-width: 400px;
+}
+
 div.yml-form
 {
-    min-width: 500px;
+    min-width: 400px;
     max-width: 650px;
     margin: auto;
     border: 3px solid #ffdd00;
@@ -51,15 +70,25 @@ div.yml-form div
 
 label
 {
+    display: inline-block;
+    text-align: right;
     color: #ffdd00;
+    width: 135px;
     font-size: 1.1em;
     margin-right: 5px;
 }
 
-input, textarea, select
+input, select, textarea
 {
     background-color: #E0C9A6;
+    width: 70%;
     font-size: 1.05em;
+    vertical-align: top;
+}
+
+div textarea
+{
+    font-size: 1.4em;
 }
 
 div#form-button-div
@@ -105,7 +134,7 @@ button:active
 
 .character-health-table-input
 {
-    width: 35px;
+    width: 6.5%;
 }
 
 .hidden
@@ -117,4 +146,31 @@ button:active
 {
     background-color: blue;
     color:gainsboro;;
+}
+
+@media screen and (max-width: 600px) {
+    select#yml-parser-selector
+    {
+        max-width: none;
+    }
+
+    label
+    {
+        display: block;
+        text-align: left;
+        width: auto;
+    }
+
+    input, select, textarea
+    {
+        display: block;
+        width: 100%;
+    }
+
+    .character-health-table-input
+    {
+        display: inline-block;
+        width: 9%;
+        text-align: center;
+    }
 }

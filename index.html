@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Gloomhaven Digital Mod Helper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css" />
     <script src="javascript/index.js"></script>
 </head>
@@ -51,6 +52,11 @@
 
     <!--CHARACTER GENERATOR FORM-->
     <div class="yml-form hidden" id="yml-character-generator-form">
+        <h2>Character</h2>
+        <div>
+            <label id="character-mercenary-name-label" for="character-mercenary-name-input">Mercenary Name:</label>
+            <input id="character-mercenary-name-input" name="character-mercenary-name-input" type="text" />
+        </div>
         <div>
             <label id="character-id-label" for="character-id-input">ID:</label>
             <input id="character-id-input" name="character-id-input" type="text" />
@@ -72,7 +78,12 @@
         </div>
         <div>
             <label id="character-default-skin-label" for="character-default-skin-input">Default Skin:</label>
-            <input id="character-default-skin-input" name="character-default-skin-input" type="number" min="0" max="2"/>
+            <select id="character-default-skin-input" name="character-default-skin-input">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+
+            </select>
         </div>
         <div>
             <label id="character-health-table-label" for="character-health-table-input-level-1">Health Table:</label>
@@ -125,6 +136,10 @@
         <div>
             <label id="character-adventure-description-label" for="character-adventure-description-input">Adventure Description:</label>
             <textarea id="character-adventure-description-input" name="character-adventure-description-input"></textarea>
+        </div>
+
+        <div>
+            <h2 class="yml-parser-preview">Preview</h2>
         </div>
     </div>
 

@@ -11,12 +11,19 @@ window.addEventListener('load', function ()
     });
 
     generateYmlButton.addEventListener("click", function(){
-        let ymlData = {};
-        downloadYmlFile(ymlData);
+        if(ymlParserSelector.value === "character")
+        {
+            let fileName = document.getElementById("character-mercenary-name-input").value;
+            let characterYmlData = getCharacterYmlString();
+            downloadYmlFile(fileName, characterYmlData);
+        }
+        else
+        {
+            console.log("TODO... generate YML file");
+        }
     });
 
     ymlParserSelector.addEventListener('change', function (){
-        console.log(ymlParserSelector.value);
         showSelectedParserForm(ymlParserSelector.value);
     });
 
@@ -30,11 +37,8 @@ window.addEventListener('load', function ()
         for(let i=0; i<ymlForms.length; i++)
         {
             let ymlForm = ymlForms[i];
-            console.log(ymlForm.id);
-            console.log(`yml-${parser}-generator-form`);
             if(ymlForm.id == `yml-${parser}-generator-form`)
             {
-                console.log("class found");
                 ymlForm.classList.remove("hidden");
             }
             else
@@ -49,11 +53,14 @@ window.addEventListener('load', function ()
      * 
      * @param {*} yml 
      */
-    function downloadYmlFile(ymlData)
+    function downloadYmlFile(fileName, ymlData)
     {
-        console.log(`TODO: Generate YML File`);
-        console.log(`The selected parser is ${ymlParserSelector.value}`);
-        console.log(getCharacterYmlString());
+        const link = document.createElement("a");
+        const file = new Blob([ymlData], { type: 'text/plain' });
+        link.href = URL.createObjectURL(file);
+        link.download = fileName+".yml";
+        link.click();
+        URL.revokeObjectURL(link.href);
     }
 
     /**
@@ -61,13 +68,20 @@ window.addEventListener('load', function ()
      */
     function resetForm()
     {
-        console.log("TODO: Reset selected form");
+        if(ymlParserSelector.value === "character")
+        {
+            console.log("TODO Reset character yml form");
+        }
+        else
+        {
+            console.log("TODO: Reset selected form");
+        }
     }
 
     /**
      * 
      */
-    function getCharacterYmlString(ymlCharacterData)
+    function getCharacterYmlString()
     {
         let characterYmlString = "";
         // Get all the input fields from parser form
