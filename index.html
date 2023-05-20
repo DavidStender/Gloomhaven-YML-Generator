@@ -11,7 +11,7 @@
         <label>Parser:</label>
         <select id="yml-parser-selector">
             <option value="hero-summon">Hero Summon</option>
-            <option value="character">Character</option>
+            <option value="character" selected>Character</option>
             <option value="attack-modifier">Attack Modifier</option>
             <option value="attack-modifier-deck">Attack Modifier Deck</option>
             <option value="ability-card">Ability Card</option>
@@ -68,12 +68,23 @@
         <div>
             <label id="character-model-label" for="character-model-input">Model:</label>
             <select id="character-model-input" name="character-model-input">
-                <option value="brute">Brute</option>
-                <option value="scoundrel">Scoundrel</option>
-                <option value="spellweaver">Spellweaver</option>
-                <option value="tinker">Tinker</option>
-                <option value="mindtheif">Mindthief</option>
-                <option value="cragheart">Cragheart</option>
+                <option value="Brute">Brute</option>
+                <option value="Scoundrel">Scoundrel</option>
+                <option value="Spellweaver">Spellweaver</option>
+                <option value="Tinker">Tinker</option>
+                <option value="Mindtheif">Mindthief</option>
+                <option value="Cragheart">Cragheart</option>
+                <option value="Beasttyrant">Beast Tyrant</option>
+                <option value="Berserker">Berserker</option>
+                <option value="Doomstalker">Doomstalker</option>
+                <option value="Elementalist">Elementalist</option>
+                <option value="Nightshroud">Nightshroud</option>
+                <option value="Plagueherald">Plagueherald</option>
+                <option value="Quartermaster">Quartermaster</option>
+                <option value="Sawbones">Sawbones</option>
+                <option value="Soothsinger">Soothsinger</option>
+                <option value="Summoner">Summoner</option>
+                <option value="Sunkeeper">Sunkeeper</option>
             </select>
         </div>
         <div>
@@ -120,9 +131,9 @@
         <div>
             <label id="character-difficulty-label" for="character-difficulty-label">Difficulty:</label>
             <select id="character-difficulty=input" name="character-difficulty-input">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
+                <option value="$DIFFICULTY_LOW$">Low</option>
+                <option value="$DIFFICULTY_MEDIUM$">Medium</option>
+                <option value="$DIFFICULTY_HIGH$">High</option>
             </select>
         </div>
         <div>
@@ -136,10 +147,6 @@
         <div>
             <label id="character-adventure-description-label" for="character-adventure-description-input">Adventure Description:</label>
             <textarea id="character-adventure-description-input" name="character-adventure-description-input"></textarea>
-        </div>
-
-        <div>
-            <h2 class="yml-parser-preview">Preview</h2>
         </div>
     </div>
 
@@ -162,6 +169,10 @@
         <div>
             <label>TODO: Ability Card Form</label>
         </div>
+        <div>
+            <h2 class="yml-character-parser-preview">Preview</h2>
+        </div>
+        <p class="todo">Todo generate preview of YML Output. example: show the card template when creating an ability card</p>
     </div>
 
     <!--ITEM CARD GENERATOR-->
@@ -340,15 +351,14 @@
     </div>
 
     <div id="form-button-div">
-        <button id="form-reset-button">Reset</button>
+        <button id="form-clear-button">Clear</button>
         <button id="generate-yml-button">Generate YML</button>
     </div>
-    <p class="todo">Todo generate preview of YML Output. example: show the card template when creating an ability card</p>
-    <p class="todo">Todo generate Language Update for YML file</p>
-    <div id="footer">
+    
+    <footer>
         <p>
             Author: David Stender<br />
-            Version: 0.1
+            Version: 0.3
         </p>
-    </div>
+    </footer>
 </body>

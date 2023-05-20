@@ -121,6 +121,20 @@ button:active
     font-size: 1.25em;
 }
 
+footer
+{
+    font-size: 1.1em;
+    text-align: center;
+    color: white;
+    border-top: 3px solid #ffdd00;
+    margin-top: 10px;
+}
+
+footer p
+{
+    margin: 10px auto;
+}
+
 /* YML Character Generator Form*/
 
 /*
@@ -140,6 +154,11 @@ button:active
 .hidden
 {
     display: none;
+}
+
+.invalid-input
+{
+    background-color: rgb(136, 26, 26);
 }
 
 .todo
