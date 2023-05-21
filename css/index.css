@@ -144,12 +144,33 @@ footer p
 
 /* YML Character Generator Form*/
 
-/*
-#character-adventure-description-input
+
+/*Treasure Table*/
+button.treasure-table-buttons
 {
     display: block;
+    font-size: .9em;
+    text-decoration: none;
+    text-align: center;
+    margin: 5px auto;
 }
-*/
+
+div.yml-form div.treasure-table-section
+{
+    text-align: center;
+    border-top: 3px solid #ffdd00;
+    padding: 10px 0px;
+}
+
+div.treasure-table-section label
+{
+    width: 105px;
+}
+
+.treasure-table-reward-input
+{
+    width: 45%;
+}
 
 /* Classes */
 
@@ -198,5 +219,11 @@ footer p
         display: inline-block;
         width: 9%;
         text-align: center;
+    }
+
+    .treasure-table-reward-input
+    {
+        display: inline;
+        width: 40%;
     }
 }

@@ -3,6 +3,7 @@ window.addEventListener('load', function ()
     let formClearButton = document.getElementById("form-clear-button");
     let generateYmlButton = document.getElementById("generate-yml-button");
     let ymlParserSelector = document.getElementById("yml-parser-selector");
+    let treasureTableSectionCount = 0;
 
     showSelectedParserForm(ymlParserSelector.value);
 
@@ -34,6 +35,12 @@ window.addEventListener('load', function ()
                 let perkYmlDataString = createPerkYmlString();
                 downloadTextData(perkFileName, perkYmlDataString, ".yml");
             }
+        }
+        else if(ymlParserSelector.value === "treasure-table")
+        {
+            let fileName = document.getElementById("treasure-table-file-name-input").value;
+            let ymlDataString = createTreasureTableYmlString();
+            downloadTextData(fileName, ymlDataString, ".yml");
         }
         else
         {
@@ -170,6 +177,35 @@ window.addEventListener('load', function ()
         }
     });
 
+    //Treasure Table
+    document.getElementById("treasure-table-add-section-button").addEventListener("click", function(){
+        let treasureTableSectionRewardCount = 0;
+        console.log("TODO: add section");
+        treasureTableSectionCount += 1;
+        document.getElementById("treasure-table-sections").innerHTML += `
+        <div class="treasure-table-section" id="treasure-table-section-${treasureTableSectionCount}">
+            <div>
+                <label id="treasure-table-section-name-label-${treasureTableSectionCount}" for="treasure-table-section-name-input-${treasureTableSectionCount}">Section Name:</label>
+                <input id="treasure-table-section-name-input-${treasureTableSectionCount}" name="treasure-table-section-name-input-${treasureTableSectionCount}" type="text" />
+            </div>
+            <button class="treasure-table-buttons" id="treasure-table-add-reward-button-${treasureTableSectionCount}">Add Reward</button>
+            <div id="treasure-table-section-${treasureTableSectionCount}-rewards"></div>
+        </div>
+        `;
+
+        document.getElementById(`treasure-table-add-reward-button-${treasureTableSectionCount}`).addEventListener("click", function(){
+            treasureTableSectionRewardCount += 1;
+            console.log("adding reward");
+            document.getElementById(`treasure-table-section-${treasureTableSectionCount}-rewards`).innerHTML += `
+            <select class="treasure-table-reward-input">
+                <option value="UnlockCharacter">Unlock Character</option>
+            </select>
+            <input class="treasure-table-reward-input" id="treasure-table-reward-input-${treasureTableSectionRewardCount}" name="treasure-table-file-name-input" type="text" />
+            `;
+        });
+    });
+
+
     /* FUNCTIONS */
 
     /**
@@ -220,6 +256,10 @@ window.addEventListener('load', function ()
         else if(parser === "perk")
         {
             clearPerkParserForm();
+        }
+        else if(parser === "treasure-table")
+        {
+            clearTreasureTableParserForm();
         }
         else
         {
@@ -456,5 +496,42 @@ window.addEventListener('load', function ()
         document.getElementById("perk-cards-to-remove-input").value = "";
         document.getElementById("perk-ignore-negative-item-effects-input").value = "False";
         document.getElementById("perk-ignore-negative-scenario-effects-input").value = "False";
+    }
+
+    /**
+     * 
+     * @returns 
+     */
+    function createTreasureTableYmlString()
+    {
+        let treasureTableYmlString = "";
+
+        // Build the YML string
+        treasureTableYmlString = "Parser: TreasureTable\n";
+        let treasureTableSectionsHtml = document.getElementsByClassName("treasure-table-section");
+        for(let i=0; i<treasureTableSectionsHtml.length; i++)
+        {
+            let sectionName = treasureTableSectionsHtml[i].querySelector("input").value;
+            treasureTableYmlString += `${sectionName}:\n`;
+
+            let treasureTableSectionRewardInputs = treasureTableSectionsHtml[i].getElementsByClassName("treasure-table-reward-input");
+            for(let j=0; j<treasureTableSectionRewardInputs.length; j+=2)
+            {
+                let rewardType = treasureTableSectionRewardInputs[j].value;
+                let rewardValue = treasureTableSectionRewardInputs[j+1].value;
+                treasureTableYmlString += `\t${rewardType}: ${rewardValue}\n`;
+            }
+        }
+        
+        return treasureTableYmlString;
+    }
+
+    /**
+     * 
+     */
+    function clearTreasureTableParserForm()
+    {
+        document.getElementById("treasure-table-file-name-input").value = "";
+        document.getElementById("treasure-table-sections").innerHTML = "";
     }
 });
