@@ -184,9 +184,56 @@
 
     <!--PERK GENERATOR-->
     <div class="yml-form hidden" id="yml-perk-generator-form">
+        <h2>Perk</h2>
         <div>
-            <label>TODO: Perk Form</label>
+            <label id="perk-file-name-label" for="perk-file-name-input">Perk File Name:</label>
+            <input id="perk-file-name-input" name="perk-file-name-input" type="text" />
         </div>
+        <div>
+            <label id="perk-id-label" for="perk-id-input">ID:</label>
+            <input id="perk-id-input" name="perk-id-input" type="text" />
+        </div>
+        <div>
+            <label id="perk-name-label" for="perk-name-input">Name:</label>
+            <input id="perk-name-input" name="perk-name-input" type="text" />
+        </div>
+        <div>
+            <label id="perk-description-label" for="perk-description-input">Description:</label>
+            <textarea id="perk-description-input" name="perk-description-input"></textarea>
+        </div>
+        <div>
+            <label id="perk-character-id-label" for="perk-character-id-input">Character ID:</label>
+            <input id="perk-character-id-input" name="perk-character-id-input" type="text" />
+        </div>
+        <div>
+            <label id="perk-available-label" for="perk-available-input">Available:</label>
+            <input id="perk-available-input" name="perk-available-input" min="1" value="1" type="number" />
+        </div>
+        <div>
+            <label id="perk-cards-to-add-label" for="perk-cards-to-add-input">Cards To Add:</label>
+            <textarea id="perk-cards-to-add-input" name="perk-cards-to-add-input"></textarea>
+        </div>
+        <div>
+            <label id="perk-cards-to-remove-label" for="perk-cards-to-remove-input">Cards To Remove:</label>
+            <textarea id="perk-cards-to-remove-input" name="perk-cards-to-remove-input"></textarea>
+        </div>
+        <div>
+            <label id="perk-ignore-negative-item-effects-label" for="perk-ignore-negative-item-effects-input">Ignore Negative Item Effects:</label>
+            <select id="perk-ignore-negative-item-effects-input" name="perk-ignore-negative-item-effects-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="perk-ignore-negative-scenario-effects-label" for="perk-ignore-negative-scenario-effects-input">Ignore Negative Scenario Effects:</label>
+            <select id="perk-ignore-negative-scenario-effects-input" name="perk-ignore-negative-scenario-effects-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+
+        <h2 class="yml-parser-preview">Preview</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--ENHANCEMENTS GENERATOR-->
@@ -219,8 +266,10 @@
 
     <!--TREASURE TABLE GENERATOR-->
     <div class="yml-form hidden" id="yml-treasure-table-generator-form">
+        <h2>Treasure Table</h2>
         <div>
-            <label>TODO: Treasure Table Form</label>
+            <label id="treasure-table-file-name-label" for="treasure-table-file-name-input">Treasure Table File Name:</label>
+            <input id="treasure-table-file-name-input" name="treasure-table-file-name-input" type="text" />
         </div>
     </div>
 

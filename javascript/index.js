@@ -26,6 +26,15 @@ window.addEventListener('load', function ()
                 downloadTextData(`${fileName}LangUpdate`, characterLangUpdate, ".csv");
             }
         }
+        else if(ymlParserSelector.value === "perk")
+        {
+            if(validatePerkParserForm() === true)
+            {
+                let perkFileName = document.getElementById("perk-file-name-input").value;
+                let perkYmlDataString = createPerkYmlString();
+                downloadTextData(perkFileName, perkYmlDataString, ".yml");
+            }
+        }
         else
         {
             console.log("TODO... generate YML file");
@@ -105,6 +114,62 @@ window.addEventListener('load', function ()
         }
     });
 
+    //Perk
+    document.getElementById("perk-file-name-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("perk-id-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("perk-name-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("perk-description-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("perk-character-id-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
     /* FUNCTIONS */
 
     /**
@@ -151,6 +216,10 @@ window.addEventListener('load', function ()
         if(parser === "character")
         {
             clearCharacterParserForm();
+        }
+        else if(parser === "perk")
+        {
+            clearPerkParserForm();
         }
         else
         {
@@ -293,5 +362,99 @@ window.addEventListener('load', function ()
         document.getElementById("character-strengths-input").value = "";
         document.getElementById("character-weaknesses-input").value = "";
         document.getElementById("character-adventure-description-input").value = "";
+    }
+
+    function validatePerkParserForm()
+    {
+        let perkFormValid = true;
+        let perkFileNameInput = document.getElementById("perk-file-name-input");
+        let perkIdInput = document.getElementById("perk-id-input");
+        let perkNameInput = document.getElementById("perk-name-input");
+        let perkDescriptionInput = document.getElementById("perk-description-input");
+        let perkCharacterIdInput = document.getElementById("perk-character-id-input");
+
+        if(perkFileNameInput.value === "")
+        {
+            perkFileNameInput.parentElement.classList.add("invalid-input");
+            perkFormValid = false;
+        }
+        else if(perkIdInput.value === "")
+        {
+            perkIdInput.parentElement.classList.add("invalid-input");
+            perkFormValid = false;
+        }
+        else if(perkNameInput.value === "")
+        {
+            perkNameInput.parentElement.classList.add("invalid-input");
+            perkFormValid = false;
+        }
+        else if(perkDescriptionInput.value === "")
+        {
+            perkDescriptionInput.parentElement.classList.add("invalid-input");
+            perkFormValid = false;
+        }
+        else if(perkCharacterIdInput.value === "")
+        {
+            perkCharacterIdInput.parentElement.classList.add("invalid-input");
+            perkFormValid = false;
+        }
+
+        return perkFormValid;
+    }
+
+    function createPerkYmlString()
+    {
+        let perkYmlString = "";
+        // Get all the input fields from parser form
+        let perkID = document.getElementById("perk-id-input").value;
+        let perkName = document.getElementById("perk-name-input").value;
+        let perkDescription = document.getElementById("perk-description-input").value;
+        let perkCharacterID = document.getElementById("perk-character-id-input").value;
+        let perkAvailable = document.getElementById("perk-available-input").value;
+        let perkCardsToAdd = document.getElementById("perk-cards-to-add-input").value;
+        let perkCardsToRemove = document.getElementById("perk-cards-to-remove-input").value;
+        let perkIgnoreNegativeItemEffects = document.getElementById("perk-ignore-negative-item-effects-input").value;
+        let perkIgnoreNegativeScenarioEffects = document.getElementById("perk-ignore-negative-scenario-effects-input").value;
+
+        // Build the YML string
+        perkYmlString = "Parser: Perk\n";
+        perkYmlString += `ID: ${perkID}\n`;
+        perkYmlString += `Name: ${perkName}\n`;
+        perkYmlString += `Description: ${perkDescription}\n`;
+        perkYmlString += `CharacterID: ${perkCharacterID}\n`;
+        perkYmlString += `Available: ${perkAvailable}\n`;
+        if(perkCardsToAdd !== "")
+        {
+           perkYmlString += `CardsToAdd: ${perkCardsToAdd}\n`; 
+        }
+        if(perkCardsToRemove !== "")
+        {
+            perkYmlString += `CardsToRemove: ${perkCardsToRemove}\n`;
+        }
+        if(perkIgnoreNegativeItemEffects === "True")
+        {
+           perkYmlString += `IgnoreNegativeItemEffects: ${perkIgnoreNegativeItemEffects}\n`; 
+        }
+        if(perkIgnoreNegativeScenarioEffects === "True")
+        {
+            perkYmlString += `IgnoreNegativeScenarioEffects: ${perkIgnoreNegativeScenarioEffects}`;
+        }
+        
+
+        return perkYmlString;
+    }
+
+    function clearPerkParserForm()
+    {
+        document.getElementById("perk-file-name-input").value = "";
+        document.getElementById("perk-id-input").value = "";
+        document.getElementById("perk-name-input").value = "";
+        document.getElementById("perk-description-input").value = "";
+        document.getElementById("perk-character-id-input").value = "";
+        document.getElementById("perk-available-input").value = "1";
+        document.getElementById("perk-cards-to-add-input").value = "";
+        document.getElementById("perk-cards-to-remove-input").value = "";
+        document.getElementById("perk-ignore-negative-item-effects-input").value = "False";
+        document.getElementById("perk-ignore-negative-scenario-effects-input").value = "False";
     }
 });
