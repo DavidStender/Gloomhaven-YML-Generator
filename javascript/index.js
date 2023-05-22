@@ -267,6 +267,72 @@ window.addEventListener('load', function ()
         }
     }
 
+    /**
+     * 
+     */
+    function validateHeroSummonParserForm()
+    {
+
+    }
+
+    function createHeroSummonYmlString()
+    {
+        let heroSummonYmlString = "";
+        let heroSummonID = document.getElementById("hero-summon-id-input").value;
+        let heroSummonLockey = document.getElementById("hero-summon-lockey-input").value;
+        let heroSummonModel = document.getElementById("hero-summon-model-input").value;
+        let heroSummonAttackAmount = document.getElementById("hero-summon-attack-amount-input").value;
+        let heroSummonAttackRange = document.getElementById("hero-summon-attack-range-input").value;
+        let heroSummonMoveAmount = document.getElementById("hero-summon-move-amount-input").value;
+        let heroSummonHealthAmount = document.getElementById("hero-summon-health-amount-input").value;
+        let heroSummonShieldAmount = document.getElementById("hero-summon-shield-amount-input").value;
+        let heroSummonRetaliateAmount = document.getElementById("hero-summon-retaliate-amount-input").value;
+        let heroSummonAttackPierce = document.getElementById("hero-summon-attack-pierce-input").value;
+        let heroSummonFlying = document.getElementById("hero-summon-flying-input").value;
+        let heroSummonAttackAnimationOverload = document.getElementById("hero-summon-attack-animation-overload-label").value;
+        let heroSummonOnAttackCondition = document.getElementById("hero-summon-on-attack-condition-label").value;
+
+        heroSummonYmlString = "Parser: HeroSummon\n";
+        heroSummonYmlString += `ID: ${heroSummonID}\n`;
+        heroSummonYmlString += `Lockey: ${heroSummonLockey}\n`;
+        heroSummonYmlString += `Model: ${heroSummonModel}\n`;
+        heroSummonYmlString += `Attack: ${heroSummonAttackAmount}\n`;
+        heroSummonYmlString += `Range: ${heroSummonAttackRange}\n`;
+        heroSummonYmlString += `Move: ${heroSummonMoveAmount}\n`;
+        heroSummonYmlString += `Health: ${heroSummonHealthAmount}\n`;
+        if(heroSummonShieldAmount !== "" || heroSummonShieldAmount != "0")
+        {
+            heroSummonYmlString += `Shield: ${heroSummonID}\n`;
+        }
+        if(heroSummonRetaliateAmount !== "" || heroSummonRetaliateAmount !== "0")
+        {
+            heroSummonYmlString += `Retaliate: ${heroSummonRetaliateAmount}\n`;
+        }
+        if(heroSummonAttackPierce !== "" || heroSummonAttackPierce !== "0")
+        {
+            heroSummonYmlString += `Pierce: ${heroSummonAttackPierce}\n`;
+        }
+        if(heroSummonFlying !== "" || heroSummonFlying !== "False")
+        {
+            heroSummonYmlString += `Flying: True\n`;
+        }
+        if(heroSummonAttackAnimationOverload !== "")
+        {
+            heroSummonYmlString += `AttackAnimOverload: ${heroSummonAttackAnimationOverload}\n`;
+        }
+        if(heroSummonOnAttackCondition !== "")
+        {
+            heroSummonYmlString += `OnAttackCondition: ${heroSummonOnAttackCondition}\n`;
+        }
+
+        return heroSummonYmlString;
+    }
+
+    function clearHeroSummonParserForm()
+    {
+
+    }
+
     function validateCharacterParserForm()
     {
         let characterFormValid = true;

@@ -11,7 +11,7 @@
         <label>Parser:</label>
         <select id="yml-parser-selector">
             <option value="hero-summon">Hero Summon</option>
-            <option value="character" selected>Character</option>
+            <option value="character">Character</option>
             <option value="attack-modifier">Attack Modifier</option>
             <option value="attack-modifier-deck">Attack Modifier Deck</option>
             <option value="ability-card">Ability Card</option>
@@ -45,8 +45,96 @@
 
     <!--HERO SUMMON GENERATOR FORM-->
     <div class="yml-form" id="yml-hero-summon-generator-form">
+        <h2>Hero Summon</h2>
         <div>
-            <label>TODO: Hero Summon Form</label>
+            <label id="hero-summon-name-label" for="hero-summon-name-input">Hero Summon Name:</label>
+            <input id="hero-summon-name-input" name="hero-summon-name-input" type="text" />
+        </div>
+        <div>
+            <label id="hero-summon-id-label" for="hero-summon-id-input">ID:</label>
+            <input id="hero-summon-id-input" name="hero-summon-id-input" type="text" />
+        </div>
+        <div>
+            <label id="hero-summon-lockey-label" for="hero-summon-lockey-input">Lockey:</label>
+            <input id="hero-summon-lockey-input" name="hero-summon-lockey-input" type="text" />
+        </div>
+        <div>
+            <label id="hero-summon-model-label" for="hero-summon-model-input">Model:</label>
+            <select id="hero-summon-model-input" name="hero-summon-model-input">
+                <optgroup label="Hero Summons">
+                    <option value="PlagueRat">Plague Rat</option>
+                </optgroup>
+                <optgroup label="Enemies">
+                    <option value="Bandit Guard Elite">Bandit Guard Elite</option>
+                </optgroup>
+                
+            </select>
+        </div>
+        <div>
+            <label id="hero-summon-attack-amount-label" for="hero-summon-attack-amount-input">Attack Amount:</label>
+            <input id="hero-summon-attack-amount-input" name="hero-summon-attack-amount-input" type="number" min="1"/>
+        </div>
+        <div>
+            <label id="hero-summon-attack-range-label" for="hero-summon-attack-range-input">Attack Range:</label>
+            <input id="hero-summon-attack-range-input" name="hero-summon-attack-range-input" type="number" min="1"/>
+        </div>
+        <div>
+            <label id="hero-summon-move-amount-label" for="hero-summon-move-amount-input">Move Amount:</label>
+            <input id="hero-summon-move-amount-input" name="hero-summon-move-amount-input" type="number" min="1"/>
+        </div>
+        <div>
+            <label id="hero-summon-health-amount-label" for="hero-summon-health-amount-input">Health Amount:</label>
+            <input id="hero-summon-health-amount-input" name="hero-summon-health-amount-input" type="number" min="1"/>
+        </div>
+        <div>
+            <label id="hero-summon-shield-amount-label" for="hero-summon-shield-amount-input">Shield Amount:</label>
+            <input id="hero-summon-shield-amount-input" name="hero-summon-shield-amount-input" type="number" min="1"/>
+        </div>
+        <div>
+            <label id="hero-summon-retaliate-amount-label" for="hero-summon-retaliate-amount-input">Retaliate Amount:</label>
+            <input id="hero-summon-retaliate-amount-input" name="hero-summon-retaliate-shield-amount-input" type="number" min="1"/>
+        </div>
+        <div>
+            <label id="hero-summon-attack-pierce-label" for="hero-summon-attack-pierce-input">Attack Pierce:</label>
+            <input id="hero-summon-attack-pierce-input" name="hero-summon-attack-pierce-input" type="number" min="0"/>
+        </div>
+        <div>
+            <label id="hero-summon-flying-label" for="hero-summon-flying-input">Flying</label>
+            <select id="hero-summon-flying-input" name="hero-summon-flying-input">
+                <option value="False" selected>False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="hero-summon-attack-animation-overload-label" for="hero-summon-attack-animation-overload-input">Attack Animation Overload:</label>
+            <input id="hero-summon-attack-animation-overload-input" name="hero-summon-attack-animation-overload-input" type="text" />
+        </div>
+        <div>
+            <label id="hero-summon-on-attack-condition-label" for="hero-summon-on-attack-condition-input">On Attack Condition:</label>
+            <select id="hero-summon-on-attack-condition-input" name="hero-summon-on-attack-condition-input">
+                <optgroup label="Neutral Condition">
+                    <option value="" selected>none</option>
+                </optgroup>
+                <optgroup label="Negative Conditions">
+                    <option value="Poison">Poison</option>
+                    <option value="Wound">Wound</option>
+                    <option value="Immobilize">Immobilize</option>
+                    <option>Disarm</option>
+                    <option>Stun</option>
+                    <option>Muddle</option>
+                    <option>Curse</option>
+                    <option>Disadvantage</option>
+                    <option>StopFlying</option>
+                    <option>Sleep</option>
+                </optgroup>
+                <optgroup label="Positive Conditions">
+                    <option>Invisible</option>
+                    <option>Strengthen</option>
+                    <option>Bless</option>
+                    <option>Advantage</option>
+                    <option>Immovable</option>
+                </optgroup>
+            </select>
         </div>
     </div>
 
@@ -152,9 +240,8 @@
 
     <!--ATTACK MODIFIER GENERATOR-->
     <div class="yml-form hidden" id="yml-attack-modifier-generator-form">
-        <div>
-            <label>TODO: Attack Modifier Form</label>
-        </div>
+        <h2>Attack Modifier</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--ATTACK MODIFIER DECK GENERATOR-->
