@@ -16,7 +16,16 @@ window.addEventListener('load', function ()
     });
 
     generateYmlButton.addEventListener("click", function(){
-        if(ymlParserSelector.value === "character")
+        if(ymlParserSelector.value === "hero-summon")
+        {
+            if(validateHeroSummonParserForm() === true)
+            {
+                let fileName = document.getElementById("hero-summon-name-input").value;
+                let ymlDataString = createHeroSummonYmlString();
+                downloadTextData(fileName, ymlDataString, ".yml");
+            }
+        }
+        else if(ymlParserSelector.value === "character")
         {
             if(validateCharacterParserForm() === true)
             {
@@ -25,6 +34,15 @@ window.addEventListener('load', function ()
                 let characterLangUpdate = createCharacterLangUpdate(fileName);
                 downloadTextData(fileName, characterYmlDataString, ".yml");
                 downloadTextData(`${fileName}LangUpdate`, characterLangUpdate, ".csv");
+            }
+        }
+        else if(ymlParserSelector.value === "attack-modifier")
+        {
+            if(validateAttackModifierParserForm() === true)
+            {
+                let fileName = document.getElementById("attack-modifier-name-input").value;
+                let ymlDataString = createAttackModifierYmlString();
+                downloadTextData(fileName, ymlDataString, ".yml");
             }
         }
         else if(ymlParserSelector.value === "perk")
@@ -50,7 +68,95 @@ window.addEventListener('load', function ()
 
     /* PARSER FORMS INPUT LISTENERS */
 
-    //Character
+    //HERO SUMMON
+    document.getElementById("hero-summon-name-input").addEventListener("input", function(){
+        if(this.value !== "")
+        {
+            if(this.parentElement.classList.contains("invalid-input"))
+            {
+                this.parentElement.classList.remove("invalid-input");
+            }
+            
+            //TODO fix bug to clear errors on the other inputs
+
+            document.getElementById("hero-summon-id-input").value = this.value+"ID";
+            document.getElementById("hero-summon-lockey-input").value = `$${this.value}$`;
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+            document.getElementById("hero-summon-id-input").value = "";
+            document.getElementById("hero-summon-lockey-input").value = "";
+        }
+    });
+
+    document.getElementById("hero-summon-id-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("hero-summon-lockey-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("hero-summon-attack-amount-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("hero-summon-attack-range-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("hero-summon-move-amount-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("hero-summon-health-amount-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    //CHARACTER
     document.getElementById("character-mercenary-name-input").addEventListener("input", function(){
         if(this.value !== "")
         {
@@ -121,7 +227,30 @@ window.addEventListener('load', function ()
         }
     });
 
-    //Perk
+    //ATTACK MODIFIER
+    document.getElementById("attack-modifier-name-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    document.getElementById("attack-modifier-math-modifier-input").addEventListener("input", function(){
+        if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
+        {
+            this.parentElement.classList.remove("invalid-input");
+        }
+        else if(this.value === "")
+        {
+            this.parentElement.classList.add("invalid-input");
+        }
+    });
+
+    //PERK
     document.getElementById("perk-file-name-input").addEventListener("input", function(){
         if(this.value !== "" && this.parentElement.classList.contains("invalid-input"))
         {
@@ -249,9 +378,17 @@ window.addEventListener('load', function ()
      */
     function clearActiveForm(parser)
     {
-        if(parser === "character")
+        if(parser === "hero-summon")
+        {
+            clearHeroSummonParserForm();
+        }
+        else if(parser === "character")
         {
             clearCharacterParserForm();
+        }
+        else if(parser === "attack-modifier")
+        {
+            clearAttackModifierParserForm();
         }
         else if(parser === "perk")
         {
@@ -272,7 +409,55 @@ window.addEventListener('load', function ()
      */
     function validateHeroSummonParserForm()
     {
+        let heroSummonFormValid = true;
 
+        //Check the "required" fields have a value
+        let fileNameInput = document.getElementById("hero-summon-name-input");
+        let heroSummonIdInput = document.getElementById("hero-summon-id-input");
+        let heroSummonLockeyInput = document.getElementById("hero-summon-lockey-input");
+        let heroSummonAttackAmount = document.getElementById("hero-summon-attack-amount-input");
+        let heroSummonAttackRange = document.getElementById("hero-summon-attack-range-input");
+        let heroSummonMoveAmount = document.getElementById("hero-summon-move-amount-input");
+        let heroSummonHealthAmount = document.getElementById("hero-summon-health-amount-input");
+
+        if(fileNameInput.value === "")
+        {
+            fileNameInput.parentElement.classList.add("invalid-input");
+            heroSummonFormValid = false;
+        }
+        else if(heroSummonIdInput.value === "")
+        {
+            heroSummonIdInput.parentElement.classList.add("invalid-input");
+            heroSummonFormValid = false;
+        }
+        else if(heroSummonLockeyInput.value === "")
+        {
+            heroSummonLockeyInput.parentElement.classList.add("invalid-input");
+            heroSummonFormValid = false;
+        }
+        else if(heroSummonAttackAmount.value === "")
+        {
+            heroSummonAttackAmount.parentElement.classList.add("invalid-input");
+            heroSummonFormValid = false;
+        }
+        else if(heroSummonAttackRange.value === "")
+        {
+            heroSummonAttackRange.parentElement.classList.add("invalid-input");
+            heroSummonFormValid = false;
+        }
+        else if(heroSummonMoveAmount.value === "")
+        {
+            heroSummonMoveAmount.parentElement.classList.add("invalid-input");
+            heroSummonFormValid = false;
+        }
+        else if(heroSummonHealthAmount.value === "")
+        {
+            heroSummonHealthAmount.parentElement.classList.add("invalid-input");
+            heroSummonFormValid = false;
+        }
+        
+
+        return heroSummonFormValid;
     }
 
     function createHeroSummonYmlString()
@@ -289,8 +474,8 @@ window.addEventListener('load', function ()
         let heroSummonRetaliateAmount = document.getElementById("hero-summon-retaliate-amount-input").value;
         let heroSummonAttackPierce = document.getElementById("hero-summon-attack-pierce-input").value;
         let heroSummonFlying = document.getElementById("hero-summon-flying-input").value;
-        let heroSummonAttackAnimationOverload = document.getElementById("hero-summon-attack-animation-overload-label").value;
-        let heroSummonOnAttackCondition = document.getElementById("hero-summon-on-attack-condition-label").value;
+        let heroSummonAttackAnimationOverload = document.getElementById("hero-summon-attack-animation-overload-input").value;
+        let heroSummonOnAttackCondition = document.getElementById("hero-summon-on-attack-condition-input").value;
 
         heroSummonYmlString = "Parser: HeroSummon\n";
         heroSummonYmlString += `ID: ${heroSummonID}\n`;
@@ -302,7 +487,7 @@ window.addEventListener('load', function ()
         heroSummonYmlString += `Health: ${heroSummonHealthAmount}\n`;
         if(heroSummonShieldAmount !== "" || heroSummonShieldAmount != "0")
         {
-            heroSummonYmlString += `Shield: ${heroSummonID}\n`;
+            heroSummonYmlString += `Shield: ${heroSummonShieldAmount}\n`;
         }
         if(heroSummonRetaliateAmount !== "" || heroSummonRetaliateAmount !== "0")
         {
@@ -312,7 +497,7 @@ window.addEventListener('load', function ()
         {
             heroSummonYmlString += `Pierce: ${heroSummonAttackPierce}\n`;
         }
-        if(heroSummonFlying !== "" || heroSummonFlying !== "False")
+        if(heroSummonFlying !== "" && heroSummonFlying !== "False")
         {
             heroSummonYmlString += `Flying: True\n`;
         }
@@ -330,7 +515,20 @@ window.addEventListener('load', function ()
 
     function clearHeroSummonParserForm()
     {
-
+        document.getElementById("hero-summon-name-input").value = "";
+        document.getElementById("hero-summon-id-input").value = "";
+        document.getElementById("hero-summon-lockey-input").value = "";
+        document.getElementById("hero-summon-model-input").value = "PlagueRat";
+        document.getElementById("hero-summon-attack-amount-input").value = "";
+        document.getElementById("hero-summon-attack-range-input").value ="";
+        document.getElementById("hero-summon-move-amount-input").value = "";
+        document.getElementById("hero-summon-health-amount-input").value = "";
+        document.getElementById("hero-summon-shield-amount-input").value = "";
+        document.getElementById("hero-summon-retaliate-amount-input").value = "";
+        document.getElementById("hero-summon-attack-pierce-input").value = "";
+        document.getElementById("hero-summon-flying-input").value = "False";
+        document.getElementById("hero-summon-attack-animation-overload-input").value = "";
+        document.getElementById("hero-summon-on-attack-condition-input").value = "";
     }
 
     function validateCharacterParserForm()
@@ -469,6 +667,86 @@ window.addEventListener('load', function ()
         document.getElementById("character-weaknesses-input").value = "";
         document.getElementById("character-adventure-description-input").value = "";
     }
+
+    function validateAttackModifierParserForm()
+    {
+        let attackModifierFormValid = true;
+
+        //Check the "required" fields have a value
+        let attackModifierNameInput = document.getElementById("attack-modifier-name-input");
+        let attackModifierMathModifierInput = document.getElementById("attack-modifier-math-modifier-input");
+
+        if(attackModifierNameInput.value === "")
+        {
+            attackModifierNameInput.parentElement.classList.add("invalid-input");
+            attackModifierFormValid = false;
+        }
+        else if(attackModifierMathModifierInput.value === "")
+        {
+            attackModifierMathModifierInput.parentElement.classList.add("invalid-input");
+            attackModifierFormValid = false;
+        }
+
+        return attackModifierFormValid;
+    }
+
+    function createAttackModifierYmlString()
+    {
+        let attackModifierYmlString = "";
+        // Get all the input fields from parser form
+        let attackModifierName = document.getElementById("attack-modifier-name-input").value;
+        let attackModifierMathModifier = document.getElementById("attack-modifier-math-modifier-input").value;
+        let attackModifierShuffle = document.getElementById("attack-modifier-shuffle-input").value;
+        let attackModifierRolling = document.getElementById("attack-modifier-rolling-input").value;
+        let attackModifierIsBless = document.getElementById("attack-modifier-is-bless-input").value;
+        let attackModifierIsCurse = document.getElementById("attack-modifier-is-curse-input").value;
+        let attackModifierAddTarget = document.getElementById("attack-modifier-add-target-input").value;
+        let attackModifierInfuseAbility = document.getElementById("attack-modifier-infuse-ability-input").value;
+
+        // Build the YML string
+        attackModifierYmlString = "Parser: AttackModifier\n";
+        attackModifierYmlString += `Name: ${attackModifierName}\n`;
+        attackModifierYmlString += `MathModifier: "${attackModifierMathModifier}"\n`;
+        if(attackModifierShuffle === "True")
+        {
+           attackModifierYmlString += `Shuffle: True\n`; 
+        }
+        if(attackModifierRolling === "True")
+        {
+            attackModifierYmlString += `Rolling: True\n`;
+        }
+        if(attackModifierIsBless === "True")
+        {
+            attackModifierYmlString += `IsBless: True\n`;
+        }
+        if(attackModifierIsCurse === "True")
+        {
+           attackModifierYmlString += `IsCurse: True\n`; 
+        }
+        if(attackModifierAddTarget === "True")
+        {
+            attackModifierYmlString += `AddTarget: True\n`;
+        }
+        if(attackModifierInfuseAbility !== "")
+        {
+            attackModifierYmlString += `Abilities:\n\tInfuseAbility:\n\t\tInfuse: [${attackModifierInfuseAbility}]`;
+        }
+
+        return attackModifierYmlString;
+    }
+
+    function clearAttackModifierParserForm()
+    {
+        document.getElementById("attack-modifier-name-input").value = "";
+        document.getElementById("attack-modifier-math-modifier-input").value = "";
+        document.getElementById("attack-modifier-shuffle-input").value = "False";
+        document.getElementById("attack-modifier-rolling-input").value = "False";
+        document.getElementById("attack-modifier-is-bless-input").value = "False";
+        document.getElementById("attack-modifier-is-curse-input").value = "False";
+        document.getElementById("attack-modifier-add-target-input").value = "False";
+        document.getElementById("attack-modifier-infuse-ability-input").value = "";
+    }
+
 
     function validatePerkParserForm()
     {

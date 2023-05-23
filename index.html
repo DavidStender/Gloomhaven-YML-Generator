@@ -119,20 +119,20 @@
                     <option value="Poison">Poison</option>
                     <option value="Wound">Wound</option>
                     <option value="Immobilize">Immobilize</option>
-                    <option>Disarm</option>
-                    <option>Stun</option>
-                    <option>Muddle</option>
-                    <option>Curse</option>
-                    <option>Disadvantage</option>
-                    <option>StopFlying</option>
-                    <option>Sleep</option>
+                    <option value="Disarm">Disarm</option>
+                    <option value="Stun">Stun</option>
+                    <option value="Muddle">Muddle</option>
+                    <option value="Curse">Curse</option>
+                    <option value="Disadvantage">Disadvantage</option>
+                    <option value="StopFlying">StopFlying</option>
+                    <option value="Sleep">Sleep</option>
                 </optgroup>
                 <optgroup label="Positive Conditions">
-                    <option>Invisible</option>
-                    <option>Strengthen</option>
-                    <option>Bless</option>
-                    <option>Advantage</option>
-                    <option>Immovable</option>
+                    <option value="Invisible">Invisible</option>
+                    <option value="Strengthen">Strengthen</option>
+                    <option value="Bless">Bless</option>
+                    <option value="Advantage">Advantage</option>
+                    <option value="Immovable">Immovable</option>
                 </optgroup>
             </select>
         </div>
@@ -241,14 +241,67 @@
     <!--ATTACK MODIFIER GENERATOR-->
     <div class="yml-form hidden" id="yml-attack-modifier-generator-form">
         <h2>Attack Modifier</h2>
-        <h3>Future Feature</h3>
+        <div>
+            <label id="attack-modifier-name-label" for="attack-modifier-name-input">Attack Modifier Name:</label>
+            <input id="attack-modifier-name-input" name="attack-modifier-name-input" type="text" />
+        </div>
+        <div>
+            <label id="attack-modifier-math-modifier-label" for="attack-modifier-math-modifier-input">Math Modifier:</label>
+            <input id="attack-modifier-math-modifier-input" name="attack-modifier-math-modifier-input" type="text" />
+        </div>
+        <div>
+            <label id="attack-modifier-shuffle-label" for="attack-modifier-shuffle-input">Shuffle:</label>
+            <select id="attack-modifier-shuffle-input" name="attack-modifier-shuffle-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="attack-modifier-rolling-label" for="attack-modifier-rolling-input">Rolling:</label>
+            <select id="attack-modifier-rolling-input" name="attack-modifier-rolling-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="attack-modifier-is-bless-label" for="attack-modifier-is-bless-input">Is Bless:</label>
+            <select id="attack-modifier-is-bless-input" name="attack-modifier-is-bless-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="attack-modifier-is-curse-label" for="attack-modifier-is-curse-input">Is Curse:</label>
+            <select id="attack-modifier-is-curse-input" name="attack-modifier-is-curse-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="attack-modifier-add-target-label" for="attack-modifier-add-target-input">Add Target:</label>
+            <select id="attack-modifier-add-target-input" name="attack-modifier-add-target-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="attack-modifier-infuse-ability-label" for="attack-modifier-infuse-ability-input">Infuse Ability:</label>
+            <select id="attack-modifier-infuse-ability-input" name="attack-modifier-infuse-ability-input">
+                <option value="">No Infusion</option>
+                <option value="Fire">Fire</option>
+                <option value="Ice">Ice</option>
+                <option value="Air">Air</option>
+                <option value="Earth">Earth</option>
+                <option value="Light">Light</option>
+                <option value="Dark">Dark</option>
+            </select>
+        </div>
     </div>
 
     <!--ATTACK MODIFIER DECK GENERATOR-->
     <div class="yml-form hidden" id="yml-attack-modifier-deck-generator-form">
-        <div>
-            <label>TODO: Attack Modifier Deck Form</label>
-        </div>
+        <h2>Attack Modifier Deck</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--ABILITY CARD GENERATOR-->
@@ -264,9 +317,8 @@
 
     <!--ITEM CARD GENERATOR-->
     <div class="yml-form hidden" id="yml-item-card-generator-form">
-        <div>
-            <label>TODO: Item Card Form</label>
-        </div>
+        <h2>Item Card</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--PERK GENERATOR-->
@@ -325,30 +377,26 @@
 
     <!--ENHANCEMENTS GENERATOR-->
     <div class="yml-form hidden" id="yml-enhancements-generator-form">
-        <div>
-            <label>TODO: Enhacements Form</label>
-        </div>
+        <h2>Enhancements</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--ENEMY CARD GENERATOR-->
     <div class="yml-form hidden" id="yml-enemy-card-generator-form">
-        <div>
-            <label>TODO: Enemy Card Form</label>
-        </div>
+        <h2>Enemy Card</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--ENEMY GENERATOR-->
     <div class="yml-form hidden" id="yml-enemy-generator-form">
-        <div>
-            <label>TODO: Enemy Form</label>
-        </div>
+        <h2>Enemy</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--MONSTER DATA GENERATOR-->
     <div class="yml-form hidden" id="yml-monster-data-generator-form">
-        <div>
-            <label>TODO: Monster Data Form</label>
-        </div>
+        <h2>Monster Data</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--TREASURE TABLE GENERATOR-->
@@ -364,128 +412,110 @@
 
     <!--ROOMS GENERATOR-->
     <div class="yml-form hidden" id="yml-rooms-generator-form">
-        <div>
-            <label>TODO: Rooms Form</label>
-        </div>
+        <h2>Rooms</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--SCENARIO ABILITY GENERATOR-->
     <div class="yml-form hidden" id="yml-scenario-ability-generator-form">
-        <div>
-            <label>TODO: Scenario Ability Form</label>
-        </div>
+        <h2>Scenario Ability</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--SCENARIO GENERATOR-->
     <div class="yml-form hidden" id="yml-scenario-generator-form">
-        <div>
-            <label>TODO: Scenario Form</label>
-        </div>
+        <h2>Scenario</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--DIFFICULTY GENERATOR-->
     <div class="yml-form hidden" id="yml-difficulty-generator-form">
-        <div>
-            <label>TODO: Difficulty Form</label>
-        </div>
+        <h2>Difficulty</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--ACHIEVEMENT GENERATOR-->
     <div class="yml-form hidden" id="yml-achievement-generator-form">
-        <div>
-            <label>TODO: Achievemnt Form</label>
-        </div>
+        <h2>Achievement</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--ROAD EVENT GENERATOR-->
     <div class="yml-form hidden" id="yml-road-event-generator-form">
-        <div>
-            <label>TODO: Road Event Form</label>
-        </div>
+        <h2>Road Event</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--VISIBILITY SPHERE GENERATOR-->
     <div class="yml-form hidden" id="yml-visibility-sphere-generator-form">
-        <div>
-            <label>TODO: Visibility Sphere Form</label>
-        </div>
+        <h2>Visibilty Sphere</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--TEMPLE GENERATOR-->
     <div class="yml-form hidden" id="yml-temple-generator-form">
-        <div>
-            <label>TODO: Temple Form</label>
-        </div>
+        <h2>Temple</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--VILLAGE GENERATOR-->
     <div class="yml-form hidden" id="yml-village-generator-form">
-        <div>
-            <label>TODO: Village Form</label>
-        </div>
+        <h2>Village</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--QUEST GENERATOR-->
     <div class="yml-form hidden" id="yml-quest-generator-form">
-        <div>
-            <label>TODO: Quest Form</label>
-        </div>
+        <h2>Quest</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--MESSAGE GENERATOR-->
     <div class="yml-form hidden" id="yml-message-generator-form">
-        <div>
-            <label>TODO: Message Form</label>
-        </div>
+        <h2>Message</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--HEADQUARTERS GENERATOR-->
     <div class="yml-form hidden" id="yml-headquarters-generator-form">
-        <div>
-            <label>TODO: Headquarters Form</label>
-        </div>
+        <h2>Headquarters Modifier</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--CITY EVENT GENERATOR-->
     <div class="yml-form hidden" id="yml-city-event-generator-form">
-        <div>
-            <label>TODO: City Event Form</label>
-        </div>
+        <h2>City Event</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--INITIAL EVENTS GENERATOR-->
     <div class="yml-form hidden" id="yml-initial-events-generator-form">
-        <div>
-            <label>TODO: Initial Events Form</label>
-        </div>
+        <h2>Initial Events</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--BATTLE GOAL GENERATOR-->
     <div class="yml-form hidden" id="yml-battle-goal-generator-form">
-        <div>
-            <label>TODO: Battle Goal Form</label>
-        </div>
+        <h2>Battle Goal</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--PERSONAL GOAL GENERATOR-->
     <div class="yml-form hidden" id="yml-personal-quest-generator-form">
-        <div>
-            <label>TODO: Personal Quest Form</label>
-        </div>
+        <h2>Personal Goal</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--STORE LOCATION GENERATOR-->
     <div class="yml-form hidden" id="yml-store-location-generator-form">
-        <div>
-            <label>TODO: Store Location Form</label>
-        </div>
+        <h2>Store Location</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <!--REMOVE YML GENERATOR-->
     <div class="yml-form hidden" id="yml-remove-yml-generator-form">
-        <div>
-            <label>TODO: Remove YML Form</label>
-        </div>
+        <h2>Remove YML</h2>
+        <h3>Future Feature</h3>
     </div>
 
     <div id="form-button-div">
