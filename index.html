@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!--
+    Author: David Stender
+    Created: May 11th, 2023
+
+    The Gloomhaven Digital Mod Helper is an application for creating Gloomhaven Digital
+    YML files. This page contains a bunch of different YML parser forms that can be selected and 
+    used to create YML files for Gloomhaven.
+-->
 <head>
     <title>Gloomhaven Digital Mod Helper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -181,7 +189,6 @@
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
-
             </select>
         </div>
         <div>
@@ -306,8 +313,65 @@
 
     <!--ABILITY CARD GENERATOR-->
     <div class="yml-form hidden" id="yml-ability-card-generator-form">
+        <h2>Ability Card</h2>
         <div>
-            <label>TODO: Ability Card Form</label>
+            <label id="ability-card-name-label" for="ability-card-name-input">Ability Card Name:</label>
+            <input id="ability-card-name-input" name="ability-card-name-input" type="text" />
+        </div>
+        <div>
+            <label id="ability-card-character-label" for="ability-card-character-input">Character:</label>
+            <input id="ability-card-character-input" name="ability-card-character-input" type="text" />
+        </div>
+        <div>
+            <label id="ability-card-id-label" for="ability-card-id-input">ID:</label>
+            <input id="ability-card-id-input" name="ability-card-id-input" type="text" />
+        </div>
+        <div>
+            <label id="ability-card-level-label" for="ability-card-level-input">Level:</label>
+            <input id="ability-card-level-input" name="ability-card-level-input" type="text" maxlength="1" />
+        </div>
+        <div>
+            <label id="ability-card-supply-card-label" for="ability-card-supply-card-input">Supply Card:</label>
+            <select id="ability-card-supply-card-input" name="ability-card-supply-card-input">
+                <option value="False">False</option>
+                <option value="True">True</option>
+            </select>
+        </div>
+        <div>
+            <label id="ability-card-initiative-label" for="ability-card-initiative-input">Initiative:</label>
+            <input id="ability-card-initiative-input" name="ability-card-initiative-input" type="number" min="1"/>
+        </div>
+        <div>
+            <label id="ability-card-discard-top-label" for="ability-card-discard-top-input">Discard (Top):</label>
+            <select id="ability-card-discard-top-input" name="ability-card-discard-top-input">
+                <option value="Discard">Discard</option>
+                <option value="Lost">Lost</option>
+                <option value="PermanentlyLost">Permanently Lost</option>
+            </select>
+        </div>
+        <div>
+            <label id="ability-card-discard-bottom-label" for="ability-card-discard-bottom-input">Discard (Bottom):</label>
+            <select id="ability-card-discard-bottom-input" name="ability-card-discard-bottom-input">
+                <option value="Discard">Discard</option>
+                <option value="Lost">Lost</option>
+                <option value="PermanentlyLost">Permanently Lost</option>
+            </select>
+        </div>
+        <div>
+            <label id="ability-card-data-abilities-top-label" for="ability-card-data-abilities-top-input">Abilities (Top):</label>
+            <textarea id="ability-card-data-abilities-top-input" name="ability-card-data-abilities-top-input"></textarea>
+        </div>
+        <div>
+            <label id="ability-card-data-abilities-bottom-label" for="ability-card-data-abilities-bottom-input">Abilities (Bottom):</label>
+            <textarea id="ability-card-data-abilities-bottom-input" name="ability-card-data-abilities-bottom-input"></textarea>
+        </div>
+        <div>
+            <label id="ability-card-layout-top-label" for="ability-card-layout-top-input">Layout (Top):</label>
+            <textarea id="ability-card-layout-top-input" name="ability-card-layout-top-input"></textarea>
+        </div>
+        <div>
+            <label id="ability-card-layout-bottom-label" for="ability-card-layout-bottom-input">Layout (Bottom):</label>
+            <textarea id="ability-card-layout-bottom-input" name="ability-card-layout-bottom-input"></textarea>
         </div>
         <div>
             <h2 class="yml-character-parser-preview">Preview</h2>
