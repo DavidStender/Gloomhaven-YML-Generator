@@ -9,34 +9,34 @@
     - Character  
         - Fix "Mercenary Name" input listener  
         - Fix "Health Table" input listener  
-    - Attack Modifier  
-    - Attack Modifier Deck  
-    - Ability Card  
-    - Item Card  
-    - Perk  
-    - Enhancements  
-    - Enemy Card  
-    - Enemy  
-    - Monster Data  
-    - Treasure Table  
-    - Rooms  
-    - Scenario Ability  
-    - Scenario  
-    - Difficulty  
-    - Achievement  
-    - Road Event  
-    - Visibility Sphere  
-    - Temple  
-    - Village  
-    - Quest  
-    - Message  
-    - Headquarters  
-    - City Event  
-    - Initial Events  
-    - Battle Goal  
-    - Personal Quest  
-    - Store Location  
-    - Remove YML  
+- Attack Modifier  
+- Attack Modifier Deck  
+- Ability Card  
+- Item Card  
+- Perk  
+- Enhancements  
+- Enemy Card  
+- Enemy  
+- Monster Data  
+- Treasure Table  
+- Rooms  
+- Scenario Ability  
+- Scenario  
+- Difficulty  
+- Achievement  
+- Road Event  
+- Visibility Sphere  
+- Temple  
+- Village  
+- Quest  
+- Message  
+- Headquarters  
+- City Event  
+- Initial Events  
+- Battle Goal  
+- Personal Quest  
+- Store Location  
+- Remove YML  
 - Support other languages  
 - How to use guide  
 - File reader  
