@@ -7,590 +7,592 @@
     YML files. This page contains a bunch of different YML parser forms that can be selected and 
     used to create YML files for Gloomhaven.
 -->
-<head>
-    <title>Gloomhaven YML Generator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css" />
-    <script src="javascript/index.js"></script>
-</head>
-<body>
-    <h1 id="page-header">Gloomhaven YML Generator</h1>
-    <div id="parser-selection-div">
-        <label>Parser:</label>
-        <select id="yml-parser-selector">
-            <option value="hero-summon">Hero Summon</option>
-            <option value="character">Character</option>
-            <option value="attack-modifier">Attack Modifier</option>
-            <option value="attack-modifier-deck">Attack Modifier Deck</option>
-            <option value="ability-card">Ability Card</option>
-            <option value="item-card">Item Card</option>
-            <option value="perk">Perk</option>
-            <option value="enhancements">Enhancements</option>
-            <option value="enemy-card">Enemy Card</option>
-            <option value="enemy">Enemy</option>
-            <option value="monster-data">Monster Data</option>
-            <option value="treasure-table">Treasure Table</option>
-            <option value="rooms">Rooms</option>
-            <option value="scenario-ability">Scenario Ability</option>
-            <option value="scenario">Scenario</option>
-            <option value="difficulty">Difficulty</option>
-            <option value="achievement">Achievement</option>
-            <option value="road-event">Road Event</option>
-            <option value="visibility-sphere">Visibility Sphere</option>
-            <option value="temple">Temple</option>
-            <option value="village">Village</option>
-            <option value="quest">Quest</option>
-            <option value="message">Message</option>
-            <option value="headquarters">Headquarters</option>
-            <option value="city-event">City Event</option>
-            <option value="initial-events">Initial Events</option>
-            <option value="battle-goal">Battle Goal</option>
-            <option value="personal-quest">Personal Quest</option>
-            <option value="store-location">Store Location</option>
-            <option value="remove-yml">Remove YML</option>
-        </select>
-    </div>
-
-    <!--HERO SUMMON GENERATOR FORM-->
-    <div class="yml-form" id="yml-hero-summon-generator-form">
-        <h2>Hero Summon</h2>
-        <div>
-            <label id="hero-summon-name-label" for="hero-summon-name-input">Hero Summon Name:</label>
-            <input id="hero-summon-name-input" name="hero-summon-name-input" type="text" />
-        </div>
-        <div>
-            <label id="hero-summon-id-label" for="hero-summon-id-input">ID:</label>
-            <input id="hero-summon-id-input" name="hero-summon-id-input" type="text" />
-        </div>
-        <div>
-            <label id="hero-summon-lockey-label" for="hero-summon-lockey-input">Lockey:</label>
-            <input id="hero-summon-lockey-input" name="hero-summon-lockey-input" type="text" />
-        </div>
-        <div>
-            <label id="hero-summon-model-label" for="hero-summon-model-input">Model:</label>
-            <select id="hero-summon-model-input" name="hero-summon-model-input">
-                <optgroup label="Hero Summons">
-                    <option value="PlagueRat">Plague Rat</option>
-                </optgroup>
-                <optgroup label="Enemies">
-                    <option value="Bandit Guard Elite">Bandit Guard Elite</option>
-                </optgroup>
-                
-            </select>
-        </div>
-        <div>
-            <label id="hero-summon-attack-amount-label" for="hero-summon-attack-amount-input">Attack Amount:</label>
-            <input id="hero-summon-attack-amount-input" name="hero-summon-attack-amount-input" type="number" min="1"/>
-        </div>
-        <div>
-            <label id="hero-summon-attack-range-label" for="hero-summon-attack-range-input">Attack Range:</label>
-            <input id="hero-summon-attack-range-input" name="hero-summon-attack-range-input" type="number" min="1"/>
-        </div>
-        <div>
-            <label id="hero-summon-move-amount-label" for="hero-summon-move-amount-input">Move Amount:</label>
-            <input id="hero-summon-move-amount-input" name="hero-summon-move-amount-input" type="number" min="1"/>
-        </div>
-        <div>
-            <label id="hero-summon-health-amount-label" for="hero-summon-health-amount-input">Health Amount:</label>
-            <input id="hero-summon-health-amount-input" name="hero-summon-health-amount-input" type="number" min="1"/>
-        </div>
-        <div>
-            <label id="hero-summon-shield-amount-label" for="hero-summon-shield-amount-input">Shield Amount:</label>
-            <input id="hero-summon-shield-amount-input" name="hero-summon-shield-amount-input" type="number" min="1"/>
-        </div>
-        <div>
-            <label id="hero-summon-retaliate-amount-label" for="hero-summon-retaliate-amount-input">Retaliate Amount:</label>
-            <input id="hero-summon-retaliate-amount-input" name="hero-summon-retaliate-shield-amount-input" type="number" min="1"/>
-        </div>
-        <div>
-            <label id="hero-summon-attack-pierce-label" for="hero-summon-attack-pierce-input">Attack Pierce:</label>
-            <input id="hero-summon-attack-pierce-input" name="hero-summon-attack-pierce-input" type="number" min="0"/>
-        </div>
-        <div>
-            <label id="hero-summon-flying-label" for="hero-summon-flying-input">Flying</label>
-            <select id="hero-summon-flying-input" name="hero-summon-flying-input">
-                <option value="False" selected>False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="hero-summon-attack-animation-overload-label" for="hero-summon-attack-animation-overload-input">Attack Animation Overload:</label>
-            <input id="hero-summon-attack-animation-overload-input" name="hero-summon-attack-animation-overload-input" type="text" />
-        </div>
-        <div>
-            <label id="hero-summon-on-attack-condition-label" for="hero-summon-on-attack-condition-input">On Attack Condition:</label>
-            <select id="hero-summon-on-attack-condition-input" name="hero-summon-on-attack-condition-input">
-                <optgroup label="Neutral Condition">
-                    <option value="" selected>none</option>
-                </optgroup>
-                <optgroup label="Negative Conditions">
-                    <option value="Poison">Poison</option>
-                    <option value="Wound">Wound</option>
-                    <option value="Immobilize">Immobilize</option>
-                    <option value="Disarm">Disarm</option>
-                    <option value="Stun">Stun</option>
-                    <option value="Muddle">Muddle</option>
-                    <option value="Curse">Curse</option>
-                    <option value="Disadvantage">Disadvantage</option>
-                    <option value="StopFlying">StopFlying</option>
-                    <option value="Sleep">Sleep</option>
-                </optgroup>
-                <optgroup label="Positive Conditions">
-                    <option value="Invisible">Invisible</option>
-                    <option value="Strengthen">Strengthen</option>
-                    <option value="Bless">Bless</option>
-                    <option value="Advantage">Advantage</option>
-                    <option value="Immovable">Immovable</option>
-                </optgroup>
-            </select>
-        </div>
-    </div>
-
-    <!--CHARACTER GENERATOR FORM-->
-    <div class="yml-form hidden" id="yml-character-generator-form">
-        <h2>Character</h2>
-        <div>
-            <label id="character-mercenary-name-label" for="character-mercenary-name-input">Mercenary Name:</label>
-            <input id="character-mercenary-name-input" name="character-mercenary-name-input" type="text" />
-        </div>
-        <div>
-            <label id="character-id-label" for="character-id-input">ID:</label>
-            <input id="character-id-input" name="character-id-input" type="text" />
-        </div>
-        <div>
-            <label id="character-lockey-label" for="character-lockey-input">Lockey:</label>
-            <input id="character-lockey-input" name="character-lockey-input" type="text" />
-        </div>
-        <div>
-            <label id="character-model-label" for="character-model-input">Model:</label>
-            <select id="character-model-input" name="character-model-input">
-                <option value="Brute">Brute</option>
-                <option value="Scoundrel">Scoundrel</option>
-                <option value="Spellweaver">Spellweaver</option>
-                <option value="Tinker">Tinker</option>
-                <option value="Mindtheif">Mindthief</option>
-                <option value="Cragheart">Cragheart</option>
-                <option value="Beasttyrant">Beast Tyrant</option>
-                <option value="Berserker">Berserker</option>
-                <option value="Doomstalker">Doomstalker</option>
-                <option value="Elementalist">Elementalist</option>
-                <option value="Nightshroud">Nightshroud</option>
-                <option value="Plagueherald">Plagueherald</option>
-                <option value="Quartermaster">Quartermaster</option>
-                <option value="Sawbones">Sawbones</option>
-                <option value="Soothsinger">Soothsinger</option>
-                <option value="Summoner">Summoner</option>
-                <option value="Sunkeeper">Sunkeeper</option>
-            </select>
-        </div>
-        <div>
-            <label id="character-default-skin-label" for="character-default-skin-input">Default Skin:</label>
-            <select id="character-default-skin-input" name="character-default-skin-input">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-            </select>
-        </div>
-        <div>
-            <label id="character-health-table-label" for="character-health-table-input-level-1">Health Table:</label>
-            <input class="character-health-table-input" id="character-health-table-input-level-1" type="number" min="0" placeholder="10"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-2" type="number" min="0" placeholder="12"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-3" type="number" min="0" placeholder="14"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-4" type="number" min="0" placeholder="16"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-5" type="number" min="0" placeholder="18"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-6" type="number" min="0" placeholder="20"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-7" type="number" min="0" placeholder="22"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-8" type="number" min="0" placeholder="24"/>
-            <input class="character-health-table-input" id="character-health-table-input-level-9" type="number" min="0" placeholder="26"/>
-        </div>
-        <div>
-            <label id="character-number-ability-cards-label" for="character-number-ability-cards-input">Number of Ability Cards In Battle:</label>
-            <input id="character-number-ability-cards-input" name="character-number-ability-cards-input" type="number" min="0"/>
-        </div>
-        <div>
-            <label id="character-attack-mod-deck-label" for="character-attack-mod-deck-input">Attack Modifier Deck:</label>
-            <input id="character-attack-mod-deck-input" name="character-attack-mod-deck-input" type="text" value="Standard"/>
-        </div>
-        <div>
-            <label id="character-companion-summon-label" for="character-companion-summon-input">Companion Summon Data:</label>
-            <input id="character-companion-summon-input" name="character-companion-summon-input" type="text"/>
-        </div>
-        <div>
-            <label id="character-description-label" for="character-description-input">Description:</label>
-            <input id="character-description-input" name="character-description-input" type="text"/>
-        </div>
-        <div>
-            <label id="character-role-label" for="character-role-input">Role:</label>
-            <input id="character-role-input" name="character-role-input" type="text"/>
-        </div>
-        <div>
-            <label id="character-difficulty-label" for="character-difficulty-label">Difficulty:</label>
-            <select id="character-difficulty=input" name="character-difficulty-input">
-                <option value="$DIFFICULTY_LOW$">Low</option>
-                <option value="$DIFFICULTY_MEDIUM$">Medium</option>
-                <option value="$DIFFICULTY_HIGH$">High</option>
-            </select>
-        </div>
-        <div>
-            <label id="character-strengths-label" for="character-strengths-input">Strengths:</label>
-            <input id="character-strengths-input" name="character-strengths-input" type="text" />
-        </div>
-        <div>
-            <label id="character-weaknesses-label" for="character-weaknesses-input">Weaknesses:</label>
-            <input id="character-weaknesses-input" name="character-weaknesses-input" type="text"/>
-        </div>
-        <div>
-            <label id="character-adventure-description-label" for="character-adventure-description-input">Adventure Description:</label>
-            <textarea id="character-adventure-description-input" name="character-adventure-description-input"></textarea>
-        </div>
-    </div>
-
-    <!--ATTACK MODIFIER GENERATOR-->
-    <div class="yml-form hidden" id="yml-attack-modifier-generator-form">
-        <h2>Attack Modifier</h2>
-        <div>
-            <label id="attack-modifier-name-label" for="attack-modifier-name-input">Attack Modifier Name:</label>
-            <input id="attack-modifier-name-input" name="attack-modifier-name-input" type="text" />
-        </div>
-        <div>
-            <label id="attack-modifier-math-modifier-label" for="attack-modifier-math-modifier-input">Math Modifier:</label>
-            <input id="attack-modifier-math-modifier-input" name="attack-modifier-math-modifier-input" type="text" />
-        </div>
-        <div>
-            <label id="attack-modifier-shuffle-label" for="attack-modifier-shuffle-input">Shuffle:</label>
-            <select id="attack-modifier-shuffle-input" name="attack-modifier-shuffle-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="attack-modifier-rolling-label" for="attack-modifier-rolling-input">Rolling:</label>
-            <select id="attack-modifier-rolling-input" name="attack-modifier-rolling-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="attack-modifier-is-bless-label" for="attack-modifier-is-bless-input">Is Bless:</label>
-            <select id="attack-modifier-is-bless-input" name="attack-modifier-is-bless-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="attack-modifier-is-curse-label" for="attack-modifier-is-curse-input">Is Curse:</label>
-            <select id="attack-modifier-is-curse-input" name="attack-modifier-is-curse-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="attack-modifier-add-target-label" for="attack-modifier-add-target-input">Add Target:</label>
-            <select id="attack-modifier-add-target-input" name="attack-modifier-add-target-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="attack-modifier-infuse-ability-label" for="attack-modifier-infuse-ability-input">Infuse Ability:</label>
-            <select id="attack-modifier-infuse-ability-input" name="attack-modifier-infuse-ability-input">
-                <option value="">No Infusion</option>
-                <option value="Fire">Fire</option>
-                <option value="Ice">Ice</option>
-                <option value="Air">Air</option>
-                <option value="Earth">Earth</option>
-                <option value="Light">Light</option>
-                <option value="Dark">Dark</option>
-            </select>
-        </div>
-    </div>
-
-    <!--ATTACK MODIFIER DECK GENERATOR-->
-    <div class="yml-form hidden" id="yml-attack-modifier-deck-generator-form">
-        <h2>Attack Modifier Deck</h2>
-        <h3>Future Feature</h3>
-    </div>
-
-    <!--ABILITY CARD GENERATOR-->
-    <div class="yml-form hidden" id="yml-ability-card-generator-form">
-        <h2>Ability Card</h2>
-        <div>
-            <label id="ability-card-name-label" for="ability-card-name-input">Ability Card Name:</label>
-            <input id="ability-card-name-input" name="ability-card-name-input" type="text" />
-        </div>
-        <div>
-            <label id="ability-card-character-label" for="ability-card-character-input">Character:</label>
-            <input id="ability-card-character-input" name="ability-card-character-input" type="text" />
-        </div>
-        <div>
-            <label id="ability-card-id-label" for="ability-card-id-input">ID:</label>
-            <input id="ability-card-id-input" name="ability-card-id-input" type="text" />
-        </div>
-        <div>
-            <label id="ability-card-level-label" for="ability-card-level-input">Level:</label>
-            <input id="ability-card-level-input" name="ability-card-level-input" type="text" maxlength="1" />
-        </div>
-        <div>
-            <label id="ability-card-supply-card-label" for="ability-card-supply-card-input">Supply Card:</label>
-            <select id="ability-card-supply-card-input" name="ability-card-supply-card-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="ability-card-initiative-label" for="ability-card-initiative-input">Initiative:</label>
-            <input id="ability-card-initiative-input" name="ability-card-initiative-input" type="number" min="1"/>
-        </div>
-        <div>
-            <label id="ability-card-discard-top-label" for="ability-card-discard-top-input">Discard (Top):</label>
-            <select id="ability-card-discard-top-input" name="ability-card-discard-top-input">
-                <option value="Discard">Discard</option>
-                <option value="Lost">Lost</option>
-                <option value="PermanentlyLost">Permanently Lost</option>
-            </select>
-        </div>
-        <div>
-            <label id="ability-card-discard-bottom-label" for="ability-card-discard-bottom-input">Discard (Bottom):</label>
-            <select id="ability-card-discard-bottom-input" name="ability-card-discard-bottom-input">
-                <option value="Discard">Discard</option>
-                <option value="Lost">Lost</option>
-                <option value="PermanentlyLost">Permanently Lost</option>
-            </select>
-        </div>
-        <div>
-            <label id="ability-card-data-abilities-top-label" for="ability-card-data-abilities-top-input">Abilities (Top):</label>
-            <textarea id="ability-card-data-abilities-top-input" name="ability-card-data-abilities-top-input"></textarea>
-        </div>
-        <div>
-            <label id="ability-card-data-abilities-bottom-label" for="ability-card-data-abilities-bottom-input">Abilities (Bottom):</label>
-            <textarea id="ability-card-data-abilities-bottom-input" name="ability-card-data-abilities-bottom-input"></textarea>
-        </div>
-        <div>
-            <label id="ability-card-layout-top-label" for="ability-card-layout-top-input">Layout (Top):</label>
-            <textarea id="ability-card-layout-top-input" name="ability-card-layout-top-input"></textarea>
-        </div>
-        <div>
-            <label id="ability-card-layout-bottom-label" for="ability-card-layout-bottom-input">Layout (Bottom):</label>
-            <textarea id="ability-card-layout-bottom-input" name="ability-card-layout-bottom-input"></textarea>
-        </div>
-        <div>
-            <h2 class="yml-character-parser-preview">Preview</h2>
-        </div>
-        <p class="todo">Todo generate preview of YML Output. example: show the card template when creating an ability card</p>
-    </div>
-
-    <!--ITEM CARD GENERATOR-->
-    <div class="yml-form hidden" id="yml-item-card-generator-form">
-        <h2>Item Card</h2>
-        <h3>Future Feature</h3>
-    </div>
-
-    <!--PERK GENERATOR-->
-    <div class="yml-form hidden" id="yml-perk-generator-form">
-        <h2>Perk</h2>
-        <div>
-            <label id="perk-file-name-label" for="perk-file-name-input">Perk File Name:</label>
-            <input id="perk-file-name-input" name="perk-file-name-input" type="text" />
-        </div>
-        <div>
-            <label id="perk-id-label" for="perk-id-input">ID:</label>
-            <input id="perk-id-input" name="perk-id-input" type="text" />
-        </div>
-        <div>
-            <label id="perk-name-label" for="perk-name-input">Name:</label>
-            <input id="perk-name-input" name="perk-name-input" type="text" />
-        </div>
-        <div>
-            <label id="perk-description-label" for="perk-description-input">Description:</label>
-            <textarea id="perk-description-input" name="perk-description-input"></textarea>
-        </div>
-        <div>
-            <label id="perk-character-id-label" for="perk-character-id-input">Character ID:</label>
-            <input id="perk-character-id-input" name="perk-character-id-input" type="text" />
-        </div>
-        <div>
-            <label id="perk-available-label" for="perk-available-input">Available:</label>
-            <input id="perk-available-input" name="perk-available-input" min="1" value="1" type="number" />
-        </div>
-        <div>
-            <label id="perk-cards-to-add-label" for="perk-cards-to-add-input">Cards To Add:</label>
-            <textarea id="perk-cards-to-add-input" name="perk-cards-to-add-input"></textarea>
-        </div>
-        <div>
-            <label id="perk-cards-to-remove-label" for="perk-cards-to-remove-input">Cards To Remove:</label>
-            <textarea id="perk-cards-to-remove-input" name="perk-cards-to-remove-input"></textarea>
-        </div>
-        <div>
-            <label id="perk-ignore-negative-item-effects-label" for="perk-ignore-negative-item-effects-input">Ignore Negative Item Effects:</label>
-            <select id="perk-ignore-negative-item-effects-input" name="perk-ignore-negative-item-effects-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
-            </select>
-        </div>
-        <div>
-            <label id="perk-ignore-negative-scenario-effects-label" for="perk-ignore-negative-scenario-effects-input">Ignore Negative Scenario Effects:</label>
-            <select id="perk-ignore-negative-scenario-effects-input" name="perk-ignore-negative-scenario-effects-input">
-                <option value="False">False</option>
-                <option value="True">True</option>
+<html>
+    <head>
+        <title>Gloomhaven YML Generator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css" />
+        <script src="javascript/index.js"></script>
+    </head>
+    <body>
+        <h1 id="page-header">Gloomhaven YML Generator</h1>
+        <div id="parser-selection-div">
+            <label>Parser:</label>
+            <select id="yml-parser-selector">
+                <option value="hero-summon">Hero Summon</option>
+                <option value="character">Character</option>
+                <option value="attack-modifier">Attack Modifier</option>
+                <option value="attack-modifier-deck">Attack Modifier Deck</option>
+                <option value="ability-card">Ability Card</option>
+                <option value="item-card">Item Card</option>
+                <option value="perk">Perk</option>
+                <option value="enhancements">Enhancements</option>
+                <option value="enemy-card">Enemy Card</option>
+                <option value="enemy">Enemy</option>
+                <option value="monster-data">Monster Data</option>
+                <option value="treasure-table">Treasure Table</option>
+                <option value="rooms">Rooms</option>
+                <option value="scenario-ability">Scenario Ability</option>
+                <option value="scenario">Scenario</option>
+                <option value="difficulty">Difficulty</option>
+                <option value="achievement">Achievement</option>
+                <option value="road-event">Road Event</option>
+                <option value="visibility-sphere">Visibility Sphere</option>
+                <option value="temple">Temple</option>
+                <option value="village">Village</option>
+                <option value="quest">Quest</option>
+                <option value="message">Message</option>
+                <option value="headquarters">Headquarters</option>
+                <option value="city-event">City Event</option>
+                <option value="initial-events">Initial Events</option>
+                <option value="battle-goal">Battle Goal</option>
+                <option value="personal-quest">Personal Quest</option>
+                <option value="store-location">Store Location</option>
+                <option value="remove-yml">Remove YML</option>
             </select>
         </div>
 
-        <h2 class="yml-parser-preview">Preview</h2>
-        <h3>Future Feature</h3>
-    </div>
-
-    <!--ENHANCEMENTS GENERATOR-->
-    <div class="yml-form hidden" id="yml-enhancements-generator-form">
-        <h2>Enhancements</h2>
-        <h3>Future Feature</h3>
-    </div>
-
-    <!--ENEMY CARD GENERATOR-->
-    <div class="yml-form hidden" id="yml-enemy-card-generator-form">
-        <h2>Enemy Card</h2>
-        <h3>Future Feature</h3>
-    </div>
-
-    <!--ENEMY GENERATOR-->
-    <div class="yml-form hidden" id="yml-enemy-generator-form">
-        <h2>Enemy</h2>
-        <h3>Future Feature</h3>
-    </div>
-
-    <!--MONSTER DATA GENERATOR-->
-    <div class="yml-form hidden" id="yml-monster-data-generator-form">
-        <h2>Monster Data</h2>
-        <h3>Future Feature</h3>
-    </div>
-
-    <!--TREASURE TABLE GENERATOR-->
-    <div class="yml-form hidden" id="yml-treasure-table-generator-form">
-        <h2>Treasure Table</h2>
-        <div>
-            <label id="treasure-table-file-name-label" for="treasure-table-file-name-input">Treasure Table File Name:</label>
-            <input id="treasure-table-file-name-input" name="treasure-table-file-name-input" type="text" />
+        <!--HERO SUMMON GENERATOR FORM-->
+        <div class="yml-form" id="yml-hero-summon-generator-form">
+            <h2>Hero Summon</h2>
+            <div>
+                <label id="hero-summon-name-label" for="hero-summon-name-input">Hero Summon Name:</label>
+                <input id="hero-summon-name-input" name="hero-summon-name-input" type="text" />
+            </div>
+            <div>
+                <label id="hero-summon-id-label" for="hero-summon-id-input">ID:</label>
+                <input id="hero-summon-id-input" name="hero-summon-id-input" type="text" />
+            </div>
+            <div>
+                <label id="hero-summon-lockey-label" for="hero-summon-lockey-input">Lockey:</label>
+                <input id="hero-summon-lockey-input" name="hero-summon-lockey-input" type="text" />
+            </div>
+            <div>
+                <label id="hero-summon-model-label" for="hero-summon-model-input">Model:</label>
+                <select id="hero-summon-model-input" name="hero-summon-model-input">
+                    <optgroup label="Hero Summons">
+                        <option value="PlagueRat">Plague Rat</option>
+                    </optgroup>
+                    <optgroup label="Enemies">
+                        <option value="Bandit Guard Elite">Bandit Guard Elite</option>
+                    </optgroup>
+                    
+                </select>
+            </div>
+            <div>
+                <label id="hero-summon-attack-amount-label" for="hero-summon-attack-amount-input">Attack Amount:</label>
+                <input id="hero-summon-attack-amount-input" name="hero-summon-attack-amount-input" type="number" min="1"/>
+            </div>
+            <div>
+                <label id="hero-summon-attack-range-label" for="hero-summon-attack-range-input">Attack Range:</label>
+                <input id="hero-summon-attack-range-input" name="hero-summon-attack-range-input" type="number" min="1"/>
+            </div>
+            <div>
+                <label id="hero-summon-move-amount-label" for="hero-summon-move-amount-input">Move Amount:</label>
+                <input id="hero-summon-move-amount-input" name="hero-summon-move-amount-input" type="number" min="1"/>
+            </div>
+            <div>
+                <label id="hero-summon-health-amount-label" for="hero-summon-health-amount-input">Health Amount:</label>
+                <input id="hero-summon-health-amount-input" name="hero-summon-health-amount-input" type="number" min="1"/>
+            </div>
+            <div>
+                <label id="hero-summon-shield-amount-label" for="hero-summon-shield-amount-input">Shield Amount:</label>
+                <input id="hero-summon-shield-amount-input" name="hero-summon-shield-amount-input" type="number" min="1"/>
+            </div>
+            <div>
+                <label id="hero-summon-retaliate-amount-label" for="hero-summon-retaliate-amount-input">Retaliate Amount:</label>
+                <input id="hero-summon-retaliate-amount-input" name="hero-summon-retaliate-shield-amount-input" type="number" min="1"/>
+            </div>
+            <div>
+                <label id="hero-summon-attack-pierce-label" for="hero-summon-attack-pierce-input">Attack Pierce:</label>
+                <input id="hero-summon-attack-pierce-input" name="hero-summon-attack-pierce-input" type="number" min="0"/>
+            </div>
+            <div>
+                <label id="hero-summon-flying-label" for="hero-summon-flying-input">Flying</label>
+                <select id="hero-summon-flying-input" name="hero-summon-flying-input">
+                    <option value="False" selected>False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="hero-summon-attack-animation-overload-label" for="hero-summon-attack-animation-overload-input">Attack Animation Overload:</label>
+                <input id="hero-summon-attack-animation-overload-input" name="hero-summon-attack-animation-overload-input" type="text" />
+            </div>
+            <div>
+                <label id="hero-summon-on-attack-condition-label" for="hero-summon-on-attack-condition-input">On Attack Condition:</label>
+                <select id="hero-summon-on-attack-condition-input" name="hero-summon-on-attack-condition-input">
+                    <optgroup label="Neutral Condition">
+                        <option value="" selected>none</option>
+                    </optgroup>
+                    <optgroup label="Negative Conditions">
+                        <option value="Poison">Poison</option>
+                        <option value="Wound">Wound</option>
+                        <option value="Immobilize">Immobilize</option>
+                        <option value="Disarm">Disarm</option>
+                        <option value="Stun">Stun</option>
+                        <option value="Muddle">Muddle</option>
+                        <option value="Curse">Curse</option>
+                        <option value="Disadvantage">Disadvantage</option>
+                        <option value="StopFlying">StopFlying</option>
+                        <option value="Sleep">Sleep</option>
+                    </optgroup>
+                    <optgroup label="Positive Conditions">
+                        <option value="Invisible">Invisible</option>
+                        <option value="Strengthen">Strengthen</option>
+                        <option value="Bless">Bless</option>
+                        <option value="Advantage">Advantage</option>
+                        <option value="Immovable">Immovable</option>
+                    </optgroup>
+                </select>
+            </div>
         </div>
-        <button class="treasure-table-buttons" id="treasure-table-add-section-button">Add Section</button>
-        <div id="treasure-table-sections"></div>
-    </div>
 
-    <!--ROOMS GENERATOR-->
-    <div class="yml-form hidden" id="yml-rooms-generator-form">
-        <h2>Rooms</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--CHARACTER GENERATOR FORM-->
+        <div class="yml-form hidden" id="yml-character-generator-form">
+            <h2>Character</h2>
+            <div>
+                <label id="character-mercenary-name-label" for="character-mercenary-name-input">Mercenary Name:</label>
+                <input id="character-mercenary-name-input" name="character-mercenary-name-input" type="text" />
+            </div>
+            <div>
+                <label id="character-id-label" for="character-id-input">ID:</label>
+                <input id="character-id-input" name="character-id-input" type="text" />
+            </div>
+            <div>
+                <label id="character-lockey-label" for="character-lockey-input">Lockey:</label>
+                <input id="character-lockey-input" name="character-lockey-input" type="text" />
+            </div>
+            <div>
+                <label id="character-model-label" for="character-model-input">Model:</label>
+                <select id="character-model-input" name="character-model-input">
+                    <option value="Brute">Brute</option>
+                    <option value="Scoundrel">Scoundrel</option>
+                    <option value="Spellweaver">Spellweaver</option>
+                    <option value="Tinker">Tinker</option>
+                    <option value="Mindtheif">Mindthief</option>
+                    <option value="Cragheart">Cragheart</option>
+                    <option value="Beasttyrant">Beast Tyrant</option>
+                    <option value="Berserker">Berserker</option>
+                    <option value="Doomstalker">Doomstalker</option>
+                    <option value="Elementalist">Elementalist</option>
+                    <option value="Nightshroud">Nightshroud</option>
+                    <option value="Plagueherald">Plagueherald</option>
+                    <option value="Quartermaster">Quartermaster</option>
+                    <option value="Sawbones">Sawbones</option>
+                    <option value="Soothsinger">Soothsinger</option>
+                    <option value="Summoner">Summoner</option>
+                    <option value="Sunkeeper">Sunkeeper</option>
+                </select>
+            </div>
+            <div>
+                <label id="character-default-skin-label" for="character-default-skin-input">Default Skin:</label>
+                <select id="character-default-skin-input" name="character-default-skin-input">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            <div>
+                <label id="character-health-table-label" for="character-health-table-input-level-1">Health Table:</label>
+                <input class="character-health-table-input" id="character-health-table-input-level-1" type="number" min="0" placeholder="10"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-2" type="number" min="0" placeholder="12"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-3" type="number" min="0" placeholder="14"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-4" type="number" min="0" placeholder="16"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-5" type="number" min="0" placeholder="18"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-6" type="number" min="0" placeholder="20"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-7" type="number" min="0" placeholder="22"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-8" type="number" min="0" placeholder="24"/>
+                <input class="character-health-table-input" id="character-health-table-input-level-9" type="number" min="0" placeholder="26"/>
+            </div>
+            <div>
+                <label id="character-number-ability-cards-label" for="character-number-ability-cards-input">Number of Ability Cards In Battle:</label>
+                <input id="character-number-ability-cards-input" name="character-number-ability-cards-input" type="number" min="0"/>
+            </div>
+            <div>
+                <label id="character-attack-mod-deck-label" for="character-attack-mod-deck-input">Attack Modifier Deck:</label>
+                <input id="character-attack-mod-deck-input" name="character-attack-mod-deck-input" type="text" value="Standard"/>
+            </div>
+            <div>
+                <label id="character-companion-summon-label" for="character-companion-summon-input">Companion Summon Data:</label>
+                <input id="character-companion-summon-input" name="character-companion-summon-input" type="text"/>
+            </div>
+            <div>
+                <label id="character-description-label" for="character-description-input">Description:</label>
+                <input id="character-description-input" name="character-description-input" type="text"/>
+            </div>
+            <div>
+                <label id="character-role-label" for="character-role-input">Role:</label>
+                <input id="character-role-input" name="character-role-input" type="text"/>
+            </div>
+            <div>
+                <label id="character-difficulty-label" for="character-difficulty-label">Difficulty:</label>
+                <select id="character-difficulty=input" name="character-difficulty-input">
+                    <option value="$DIFFICULTY_LOW$">Low</option>
+                    <option value="$DIFFICULTY_MEDIUM$">Medium</option>
+                    <option value="$DIFFICULTY_HIGH$">High</option>
+                </select>
+            </div>
+            <div>
+                <label id="character-strengths-label" for="character-strengths-input">Strengths:</label>
+                <input id="character-strengths-input" name="character-strengths-input" type="text" />
+            </div>
+            <div>
+                <label id="character-weaknesses-label" for="character-weaknesses-input">Weaknesses:</label>
+                <input id="character-weaknesses-input" name="character-weaknesses-input" type="text"/>
+            </div>
+            <div>
+                <label id="character-adventure-description-label" for="character-adventure-description-input">Adventure Description:</label>
+                <textarea id="character-adventure-description-input" name="character-adventure-description-input"></textarea>
+            </div>
+        </div>
 
-    <!--SCENARIO ABILITY GENERATOR-->
-    <div class="yml-form hidden" id="yml-scenario-ability-generator-form">
-        <h2>Scenario Ability</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ATTACK MODIFIER GENERATOR-->
+        <div class="yml-form hidden" id="yml-attack-modifier-generator-form">
+            <h2>Attack Modifier</h2>
+            <div>
+                <label id="attack-modifier-name-label" for="attack-modifier-name-input">Attack Modifier Name:</label>
+                <input id="attack-modifier-name-input" name="attack-modifier-name-input" type="text" />
+            </div>
+            <div>
+                <label id="attack-modifier-math-modifier-label" for="attack-modifier-math-modifier-input">Math Modifier:</label>
+                <input id="attack-modifier-math-modifier-input" name="attack-modifier-math-modifier-input" type="text" />
+            </div>
+            <div>
+                <label id="attack-modifier-shuffle-label" for="attack-modifier-shuffle-input">Shuffle:</label>
+                <select id="attack-modifier-shuffle-input" name="attack-modifier-shuffle-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="attack-modifier-rolling-label" for="attack-modifier-rolling-input">Rolling:</label>
+                <select id="attack-modifier-rolling-input" name="attack-modifier-rolling-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="attack-modifier-is-bless-label" for="attack-modifier-is-bless-input">Is Bless:</label>
+                <select id="attack-modifier-is-bless-input" name="attack-modifier-is-bless-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="attack-modifier-is-curse-label" for="attack-modifier-is-curse-input">Is Curse:</label>
+                <select id="attack-modifier-is-curse-input" name="attack-modifier-is-curse-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="attack-modifier-add-target-label" for="attack-modifier-add-target-input">Add Target:</label>
+                <select id="attack-modifier-add-target-input" name="attack-modifier-add-target-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="attack-modifier-infuse-ability-label" for="attack-modifier-infuse-ability-input">Infuse Ability:</label>
+                <select id="attack-modifier-infuse-ability-input" name="attack-modifier-infuse-ability-input">
+                    <option value="">No Infusion</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Ice">Ice</option>
+                    <option value="Air">Air</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Light">Light</option>
+                    <option value="Dark">Dark</option>
+                </select>
+            </div>
+        </div>
 
-    <!--SCENARIO GENERATOR-->
-    <div class="yml-form hidden" id="yml-scenario-generator-form">
-        <h2>Scenario</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ATTACK MODIFIER DECK GENERATOR-->
+        <div class="yml-form hidden" id="yml-attack-modifier-deck-generator-form">
+            <h2>Attack Modifier Deck</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--DIFFICULTY GENERATOR-->
-    <div class="yml-form hidden" id="yml-difficulty-generator-form">
-        <h2>Difficulty</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ABILITY CARD GENERATOR-->
+        <div class="yml-form hidden" id="yml-ability-card-generator-form">
+            <h2>Ability Card</h2>
+            <div>
+                <label id="ability-card-name-label" for="ability-card-name-input">Ability Card Name:</label>
+                <input id="ability-card-name-input" name="ability-card-name-input" type="text" />
+            </div>
+            <div>
+                <label id="ability-card-character-label" for="ability-card-character-input">Character:</label>
+                <input id="ability-card-character-input" name="ability-card-character-input" type="text" />
+            </div>
+            <div>
+                <label id="ability-card-id-label" for="ability-card-id-input">ID:</label>
+                <input id="ability-card-id-input" name="ability-card-id-input" type="text" />
+            </div>
+            <div>
+                <label id="ability-card-level-label" for="ability-card-level-input">Level:</label>
+                <input id="ability-card-level-input" name="ability-card-level-input" type="text" maxlength="1" />
+            </div>
+            <div>
+                <label id="ability-card-supply-card-label" for="ability-card-supply-card-input">Supply Card:</label>
+                <select id="ability-card-supply-card-input" name="ability-card-supply-card-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="ability-card-initiative-label" for="ability-card-initiative-input">Initiative:</label>
+                <input id="ability-card-initiative-input" name="ability-card-initiative-input" type="number" min="1"/>
+            </div>
+            <div>
+                <label id="ability-card-discard-top-label" for="ability-card-discard-top-input">Discard (Top):</label>
+                <select id="ability-card-discard-top-input" name="ability-card-discard-top-input">
+                    <option value="Discard">Discard</option>
+                    <option value="Lost">Lost</option>
+                    <option value="PermanentlyLost">Permanently Lost</option>
+                </select>
+            </div>
+            <div>
+                <label id="ability-card-discard-bottom-label" for="ability-card-discard-bottom-input">Discard (Bottom):</label>
+                <select id="ability-card-discard-bottom-input" name="ability-card-discard-bottom-input">
+                    <option value="Discard">Discard</option>
+                    <option value="Lost">Lost</option>
+                    <option value="PermanentlyLost">Permanently Lost</option>
+                </select>
+            </div>
+            <div>
+                <label id="ability-card-data-abilities-top-label" for="ability-card-data-abilities-top-input">Abilities (Top):</label>
+                <textarea id="ability-card-data-abilities-top-input" name="ability-card-data-abilities-top-input"></textarea>
+            </div>
+            <div>
+                <label id="ability-card-data-abilities-bottom-label" for="ability-card-data-abilities-bottom-input">Abilities (Bottom):</label>
+                <textarea id="ability-card-data-abilities-bottom-input" name="ability-card-data-abilities-bottom-input"></textarea>
+            </div>
+            <div>
+                <label id="ability-card-layout-top-label" for="ability-card-layout-top-input">Layout (Top):</label>
+                <textarea id="ability-card-layout-top-input" name="ability-card-layout-top-input"></textarea>
+            </div>
+            <div>
+                <label id="ability-card-layout-bottom-label" for="ability-card-layout-bottom-input">Layout (Bottom):</label>
+                <textarea id="ability-card-layout-bottom-input" name="ability-card-layout-bottom-input"></textarea>
+            </div>
+            <div>
+                <h2 class="yml-character-parser-preview">Preview</h2>
+            </div>
+            <p class="todo">Todo generate preview of YML Output. example: show the card template when creating an ability card</p>
+        </div>
 
-    <!--ACHIEVEMENT GENERATOR-->
-    <div class="yml-form hidden" id="yml-achievement-generator-form">
-        <h2>Achievement</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ITEM CARD GENERATOR-->
+        <div class="yml-form hidden" id="yml-item-card-generator-form">
+            <h2>Item Card</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--ROAD EVENT GENERATOR-->
-    <div class="yml-form hidden" id="yml-road-event-generator-form">
-        <h2>Road Event</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--PERK GENERATOR-->
+        <div class="yml-form hidden" id="yml-perk-generator-form">
+            <h2>Perk</h2>
+            <div>
+                <label id="perk-file-name-label" for="perk-file-name-input">Perk File Name:</label>
+                <input id="perk-file-name-input" name="perk-file-name-input" type="text" />
+            </div>
+            <div>
+                <label id="perk-id-label" for="perk-id-input">ID:</label>
+                <input id="perk-id-input" name="perk-id-input" type="text" />
+            </div>
+            <div>
+                <label id="perk-name-label" for="perk-name-input">Name:</label>
+                <input id="perk-name-input" name="perk-name-input" type="text" />
+            </div>
+            <div>
+                <label id="perk-description-label" for="perk-description-input">Description:</label>
+                <textarea id="perk-description-input" name="perk-description-input"></textarea>
+            </div>
+            <div>
+                <label id="perk-character-id-label" for="perk-character-id-input">Character ID:</label>
+                <input id="perk-character-id-input" name="perk-character-id-input" type="text" />
+            </div>
+            <div>
+                <label id="perk-available-label" for="perk-available-input">Available:</label>
+                <input id="perk-available-input" name="perk-available-input" min="1" value="1" type="number" />
+            </div>
+            <div>
+                <label id="perk-cards-to-add-label" for="perk-cards-to-add-input">Cards To Add:</label>
+                <textarea id="perk-cards-to-add-input" name="perk-cards-to-add-input"></textarea>
+            </div>
+            <div>
+                <label id="perk-cards-to-remove-label" for="perk-cards-to-remove-input">Cards To Remove:</label>
+                <textarea id="perk-cards-to-remove-input" name="perk-cards-to-remove-input"></textarea>
+            </div>
+            <div>
+                <label id="perk-ignore-negative-item-effects-label" for="perk-ignore-negative-item-effects-input">Ignore Negative Item Effects:</label>
+                <select id="perk-ignore-negative-item-effects-input" name="perk-ignore-negative-item-effects-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div>
+                <label id="perk-ignore-negative-scenario-effects-label" for="perk-ignore-negative-scenario-effects-input">Ignore Negative Scenario Effects:</label>
+                <select id="perk-ignore-negative-scenario-effects-input" name="perk-ignore-negative-scenario-effects-input">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
 
-    <!--VISIBILITY SPHERE GENERATOR-->
-    <div class="yml-form hidden" id="yml-visibility-sphere-generator-form">
-        <h2>Visibilty Sphere</h2>
-        <h3>Future Feature</h3>
-    </div>
+            <h2 class="yml-parser-preview">Preview</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--TEMPLE GENERATOR-->
-    <div class="yml-form hidden" id="yml-temple-generator-form">
-        <h2>Temple</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ENHANCEMENTS GENERATOR-->
+        <div class="yml-form hidden" id="yml-enhancements-generator-form">
+            <h2>Enhancements</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--VILLAGE GENERATOR-->
-    <div class="yml-form hidden" id="yml-village-generator-form">
-        <h2>Village</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ENEMY CARD GENERATOR-->
+        <div class="yml-form hidden" id="yml-enemy-card-generator-form">
+            <h2>Enemy Card</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--QUEST GENERATOR-->
-    <div class="yml-form hidden" id="yml-quest-generator-form">
-        <h2>Quest</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ENEMY GENERATOR-->
+        <div class="yml-form hidden" id="yml-enemy-generator-form">
+            <h2>Enemy</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--MESSAGE GENERATOR-->
-    <div class="yml-form hidden" id="yml-message-generator-form">
-        <h2>Message</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--MONSTER DATA GENERATOR-->
+        <div class="yml-form hidden" id="yml-monster-data-generator-form">
+            <h2>Monster Data</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--HEADQUARTERS GENERATOR-->
-    <div class="yml-form hidden" id="yml-headquarters-generator-form">
-        <h2>Headquarters Modifier</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--TREASURE TABLE GENERATOR-->
+        <div class="yml-form hidden" id="yml-treasure-table-generator-form">
+            <h2>Treasure Table</h2>
+            <div>
+                <label id="treasure-table-file-name-label" for="treasure-table-file-name-input">Treasure Table File Name:</label>
+                <input id="treasure-table-file-name-input" name="treasure-table-file-name-input" type="text" />
+            </div>
+            <button class="treasure-table-buttons" id="treasure-table-add-section-button">Add Section</button>
+            <div id="treasure-table-sections"></div>
+        </div>
 
-    <!--CITY EVENT GENERATOR-->
-    <div class="yml-form hidden" id="yml-city-event-generator-form">
-        <h2>City Event</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ROOMS GENERATOR-->
+        <div class="yml-form hidden" id="yml-rooms-generator-form">
+            <h2>Rooms</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--INITIAL EVENTS GENERATOR-->
-    <div class="yml-form hidden" id="yml-initial-events-generator-form">
-        <h2>Initial Events</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--SCENARIO ABILITY GENERATOR-->
+        <div class="yml-form hidden" id="yml-scenario-ability-generator-form">
+            <h2>Scenario Ability</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--BATTLE GOAL GENERATOR-->
-    <div class="yml-form hidden" id="yml-battle-goal-generator-form">
-        <h2>Battle Goal</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--SCENARIO GENERATOR-->
+        <div class="yml-form hidden" id="yml-scenario-generator-form">
+            <h2>Scenario</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--PERSONAL GOAL GENERATOR-->
-    <div class="yml-form hidden" id="yml-personal-quest-generator-form">
-        <h2>Personal Goal</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--DIFFICULTY GENERATOR-->
+        <div class="yml-form hidden" id="yml-difficulty-generator-form">
+            <h2>Difficulty</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--STORE LOCATION GENERATOR-->
-    <div class="yml-form hidden" id="yml-store-location-generator-form">
-        <h2>Store Location</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ACHIEVEMENT GENERATOR-->
+        <div class="yml-form hidden" id="yml-achievement-generator-form">
+            <h2>Achievement</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <!--REMOVE YML GENERATOR-->
-    <div class="yml-form hidden" id="yml-remove-yml-generator-form">
-        <h2>Remove YML</h2>
-        <h3>Future Feature</h3>
-    </div>
+        <!--ROAD EVENT GENERATOR-->
+        <div class="yml-form hidden" id="yml-road-event-generator-form">
+            <h2>Road Event</h2>
+            <h3>Future Feature</h3>
+        </div>
 
-    <div id="form-button-div">
-        <button id="form-clear-button">Clear</button>
-        <button id="generate-yml-button">Generate YML</button>
-    </div>
-    
-    <footer>
-        <p>
-            Author: David Stender<br />
-            Version: 0.3
-        </p>
-    </footer>
-</body>
+        <!--VISIBILITY SPHERE GENERATOR-->
+        <div class="yml-form hidden" id="yml-visibility-sphere-generator-form">
+            <h2>Visibilty Sphere</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--TEMPLE GENERATOR-->
+        <div class="yml-form hidden" id="yml-temple-generator-form">
+            <h2>Temple</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--VILLAGE GENERATOR-->
+        <div class="yml-form hidden" id="yml-village-generator-form">
+            <h2>Village</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--QUEST GENERATOR-->
+        <div class="yml-form hidden" id="yml-quest-generator-form">
+            <h2>Quest</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--MESSAGE GENERATOR-->
+        <div class="yml-form hidden" id="yml-message-generator-form">
+            <h2>Message</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--HEADQUARTERS GENERATOR-->
+        <div class="yml-form hidden" id="yml-headquarters-generator-form">
+            <h2>Headquarters Modifier</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--CITY EVENT GENERATOR-->
+        <div class="yml-form hidden" id="yml-city-event-generator-form">
+            <h2>City Event</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--INITIAL EVENTS GENERATOR-->
+        <div class="yml-form hidden" id="yml-initial-events-generator-form">
+            <h2>Initial Events</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--BATTLE GOAL GENERATOR-->
+        <div class="yml-form hidden" id="yml-battle-goal-generator-form">
+            <h2>Battle Goal</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--PERSONAL GOAL GENERATOR-->
+        <div class="yml-form hidden" id="yml-personal-quest-generator-form">
+            <h2>Personal Goal</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--STORE LOCATION GENERATOR-->
+        <div class="yml-form hidden" id="yml-store-location-generator-form">
+            <h2>Store Location</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <!--REMOVE YML GENERATOR-->
+        <div class="yml-form hidden" id="yml-remove-yml-generator-form">
+            <h2>Remove YML</h2>
+            <h3>Future Feature</h3>
+        </div>
+
+        <div id="form-button-div">
+            <button id="form-clear-button">Clear</button>
+            <button id="generate-yml-button">Generate YML</button>
+        </div>
+        
+        <footer>
+            <p>
+                Author: David Stender<br />
+                Version: 0.3
+            </p>
+        </footer>
+    </body>
+</html>
