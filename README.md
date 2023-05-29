@@ -6,9 +6,9 @@
 # TODO List
 - Create parser forms for all parser types  
 - Hero Summon  
-    - Character  
-        - Fix "Mercenary Name" input listener  
-        - Fix "Health Table" input listener  
+- Character  
+    - Fix "Mercenary Name" input listener  
+    - Fix "Health Table" input listener  
 - Attack Modifier  
 - Attack Modifier Deck  
 - Ability Card  
