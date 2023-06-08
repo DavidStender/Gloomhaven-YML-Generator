@@ -142,7 +142,7 @@ footer p
     margin: 10px auto;
 }
 
-/* YML Character Generator Form*/
+/* YML Character Generator Forms*/
 
 
 /*Treasure Table*/
@@ -195,6 +195,7 @@ div.treasure-table-section label
     color:gainsboro;;
 }
 
+/* Mobile Styles */
 @media screen and (max-width: 600px) {
     select#yml-parser-selector
     {

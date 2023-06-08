@@ -531,6 +531,13 @@ window.addEventListener('load', function ()
         document.getElementById("hero-summon-on-attack-condition-input").value = "";
     }
 
+    /**
+     * Checks specific fields in the Character Parser form to see if they are in 
+     * a valid state or not. The following fields on the Character Parser form are 
+     * checked to be valid "Mercenary Name", "ID", "Lockey", and "Health Table".
+     * 
+     * @returns A bool for if the Attack Modifier Parser form is in a valid state or not
+     */
     function validateCharacterParserForm()
     {
         let characterFormValid = true;
@@ -579,11 +586,17 @@ window.addEventListener('load', function ()
     }
 
     /**
+     * Takes the data entered into the Character Parser form, and transform it into a 
+     * string that is structured in a valid Gloomhaven YML format.
      * 
+     * Character Parser form must be validated first.
+     * 
+     * @returns A YML string representation of the Character Parser form
      */
     function createCharacterYmlString()
     {
         let characterYmlString = "";
+
         // Get all the input fields from parser form
         let characterID = document.getElementById("character-id-input").value;
         let characterLockey = document.getElementById("character-lockey-input").value;
@@ -618,6 +631,19 @@ window.addEventListener('load', function ()
         return characterYmlString;
     }
 
+    /**
+     * Generates a Character Language Update string which is a string that is formatted as a csv, and it 
+     * contains general information about a Gloomhaven character for different languages. This Uses information 
+     * directly from the Character Parser form to create the Character Language Update string. The following
+     * fields that are used from the Character Parser form are "Description", "Role", "Strengths", 
+     * "Weaknesses", and "Adventure Description".
+     * 
+     * Character Parser form must be validated first.
+     * The only currently supported language is English.
+     * 
+     * @param {string} mercenaryName The name of the Mercenary to create a Language Update string
+     * @returns A csv string that contains information about a character in different languages
+     */
     function createCharacterLangUpdate(mercenaryName)
     {
         let characterLangUpdateString = "";
@@ -639,7 +665,7 @@ window.addEventListener('load', function ()
     }
 
     /**
-     * 
+     * Removes all data entered into the Character Parser form.
      */
     function clearCharacterParserForm()
     {
@@ -668,6 +694,13 @@ window.addEventListener('load', function ()
         document.getElementById("character-adventure-description-input").value = "";
     }
 
+    /**
+     * Checks specific fields in the Attack Modifier Parser form to see if they are in 
+     * a valid state or not. The following fields on the Attack Modifier Parser form are 
+     * checked to be valid "Attack Modifier Name", and "Math Modifier".
+     * 
+     * @returns A bool for if the Attack Modifier Parser form is in a valid state or not
+     */
     function validateAttackModifierParserForm()
     {
         let attackModifierFormValid = true;
@@ -690,9 +723,18 @@ window.addEventListener('load', function ()
         return attackModifierFormValid;
     }
 
+    /**
+     * Takes the data entered into the Attack Modifier Parser form, and transform it into a 
+     * string that is structured in a valid Gloomhaven YML format.
+     * 
+     * Attack Modifier Parser form must be validated first.
+     * 
+     * @returns A YML string representation of the Attack Modifier Parser form
+     */
     function createAttackModifierYmlString()
     {
         let attackModifierYmlString = "";
+
         // Get all the input fields from parser form
         let attackModifierName = document.getElementById("attack-modifier-name-input").value;
         let attackModifierMathModifier = document.getElementById("attack-modifier-math-modifier-input").value;
@@ -735,6 +777,9 @@ window.addEventListener('load', function ()
         return attackModifierYmlString;
     }
 
+    /**
+     * Removes all data entered into the Attack Modifier Parser form.
+     */
     function clearAttackModifierParserForm()
     {
         document.getElementById("attack-modifier-name-input").value = "";
@@ -747,7 +792,13 @@ window.addEventListener('load', function ()
         document.getElementById("attack-modifier-infuse-ability-input").value = "";
     }
 
-
+    /**
+     * Checks specific fields in the Perk Parser form to see if they are in a valid
+     * state or not. The following fields on the Perk Parser form are checked to be valid 
+     * "Perk File Name", "ID", "Name", "Description", and "Character ID".
+     * 
+     * @returns A bool for if the Perk Parser form is in a valid state or not
+     */
     function validatePerkParserForm()
     {
         let perkFormValid = true;
@@ -786,9 +837,18 @@ window.addEventListener('load', function ()
         return perkFormValid;
     }
 
+    /**
+     * Takes the data entered into the Perk Parser form, and transform it into a 
+     * string that is structured in a valid Gloomhaven YML format.
+     * 
+     * Perk Parser form must be validated first.
+     * 
+     * @returns A YML string representation of the Perk Parser form
+     */
     function createPerkYmlString()
     {
         let perkYmlString = "";
+
         // Get all the input fields from parser form
         let perkID = document.getElementById("perk-id-input").value;
         let perkName = document.getElementById("perk-name-input").value;
@@ -823,11 +883,13 @@ window.addEventListener('load', function ()
         {
             perkYmlString += `IgnoreNegativeScenarioEffects: ${perkIgnoreNegativeScenarioEffects}`;
         }
-        
 
         return perkYmlString;
     }
 
+    /**
+     * Removes all data entered into the Perk Parser form.
+     */
     function clearPerkParserForm()
     {
         document.getElementById("perk-file-name-input").value = "";
@@ -843,8 +905,12 @@ window.addEventListener('load', function ()
     }
 
     /**
+     * Takes the data entered into the Treasure Table Parser form, and transform it into a 
+     * string that is structured in a valid Gloomhaven YML format.
      * 
-     * @returns 
+     * Treasure Table Parser form must be validated first.
+     * 
+     * @returns A YML string representation of the Treasure Table Parser form
      */
     function createTreasureTableYmlString()
     {
@@ -871,7 +937,7 @@ window.addEventListener('load', function ()
     }
 
     /**
-     * 
+     * Removes all data entered into the Treasure TAble Parser form.
      */
     function clearTreasureTableParserForm()
     {
